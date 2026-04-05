@@ -4,7 +4,7 @@ export const SITE: Site = {
   title: 'Eli’s Blog',
   description:
     'A blog about software development, design, Arabic, FOSS, cryptoeconomics, libre graphics, and other things Eli is interested in.',
-  href: 'https://elih.blog',
+  href: 'https://eliheuer.com',
   author: 'Eli Heuer',
   locale: 'en-US',
   featuredPostCount: 3,
