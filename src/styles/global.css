@@ -16,6 +16,8 @@
     'Hasubi Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     'Liberation Mono', 'Courier New', monospace;
 
+  --radius: 2px;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
@@ -133,6 +135,7 @@ html.use-geist-font *:not(code):not(pre):not(pre *):not(code *):not(.ec-line):no
   ::backdrop,
   ::file-selector-button {
     @apply border-border outline-ring/50 tracking-tight;
+    border-radius: 4px !important;
   }
 
   html {

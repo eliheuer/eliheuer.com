@@ -25,7 +25,7 @@ const formattedDate = formatDate(entry.data.date)
 >
   <Link
     href={`/${entry.collection}/${entry.id}`}
-    class="flex flex-col gap-5 sm:flex-row"
+    class="flex flex-col gap-5 sm:flex-row sm:items-stretch"
   >
     {
       entry.data.image && (
@@ -35,7 +35,7 @@ const formattedDate = formatDate(entry.data.date)
             alt={entry.data.title}
             width={1200}
             height={630}
-            class="w-full h-auto object-cover rounded-md"
+            class="w-full h-full object-cover rounded-md"
           />
         </div>
       )
@@ -43,12 +43,12 @@ const formattedDate = formatDate(entry.data.date)
 
     <div class="grow flex flex-col justify-between">
       <div>
-        <h3 class="mb-2 text-2xl font-normal tracking-tight">{entry.data.title}</h3>
-        <p class="text-foreground/70 mb-1 text-sm">{entry.data.description}</p>
+        <h3 class="text-2xl font-normal tracking-tight">{entry.data.title}</h3>
+        <p class="text-foreground/70 text-sm">{entry.data.description}</p>
       </div>
 
       <div>
-        <p class="text-muted-foreground text-sm mt-auto">{formattedDate}</p>
+        <p class="text-muted-foreground text-sm">{formattedDate}</p>
       </div>
     </div>
   </Link>
