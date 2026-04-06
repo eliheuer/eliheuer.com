@@ -1,7 +1,7 @@
 import type { IconMap, SocialLink, Site } from '@/types'
 
 export const SITE: Site = {
-  title: 'Eli’s Blog',
+  title: 'Eli Heuer',
   description:
     'A blog about software development, design, Arabic, FOSS, cryptoeconomics, libre graphics, and other things Eli is interested in.',
   href: 'https://eliheuer.com',
@@ -12,21 +12,17 @@ export const SITE: Site = {
 }
 
 export const NAV_LINKS: SocialLink[] = [
-  // {
-  //   href: '/projects',
-  //   label: 'projects',
-  // },
-  // {
-  //   href: '/graphics',
-  //   label: 'graphics',
-  // },
-  // {
-  //   href: '/tags',
-  //   label: 'tags',
-  // },
   {
-    href: '/about',
-    label: 'about',
+    href: '/blog',
+    label: 'blog',
+  },
+  {
+    href: '/fonts',
+    label: 'fonts',
+  },
+  {
+    href: '/software',
+    label: 'software',
   },
 ]
 

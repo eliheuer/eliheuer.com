@@ -1,0 +1,39 @@
+---
+import PostHead from '@/components/PostHead.astro'
+import { Button } from '@/components/ui/button'
+import Layout from '@/layouts/Layout.astro'
+import { Icon } from 'astro-icon/components'
+import { Image } from 'astro:assets'
+import { getCollection, render } from 'astro:content'
+
+export async function getStaticPaths() {
+  const fonts = await getCollection('fonts', ({ data }) => !data.draft)
+  return fonts.map((font) => ({
+    params: { id: font.id },
+    props: font,
+  }))
+}
+
+const font = Astro.props
+const { Content } = await render(font)
+---
+
+<Layout>
+  <PostHead slot="head" post={font} />
+  <section class="flex flex-col gap-y-8">
+    {
+      font.data.image && (
+        <Image
+          src={font.data.image}
+          alt={font.data.title}
+          width={1200}
+          height={630}
+          class="w-full object-cover mb-2 rounded-md"
+        />
+      )
+    }
+    <article class="prose">
+      <Content />
+    </article>
+  </section>
+</Layout>

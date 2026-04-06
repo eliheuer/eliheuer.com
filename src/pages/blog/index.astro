@@ -1,0 +1,24 @@
+---
+import BlogCard from '@/components/BlogCard.astro'
+import PageHead from '@/components/PageHead.astro'
+import Layout from '@/layouts/Layout.astro'
+import { getAllPosts } from '@/lib/data-utils'
+
+const allPosts = await getAllPosts()
+---
+
+<Layout>
+  <PageHead slot="head" title="Blog" />
+
+  <section class="flex flex-col gap-y-4">
+    <ul class="flex flex-col gap-y-4">
+      {
+        allPosts.map((post) => (
+          <li>
+            <BlogCard entry={post} />
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Layout>

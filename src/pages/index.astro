@@ -1,89 +1,29 @@
 ---
-import BlogCard from '@/components/BlogCard.astro'
 import Link from '@/components/Link.astro'
 import PageHead from '@/components/PageHead.astro'
-import { buttonVariants } from '@/components/ui/button'
-import { SITE } from '@/consts'
 import Layout from '@/layouts/Layout.astro'
-import { getAllPosts } from '@/lib/data-utils'
-
-const blog = await getAllPosts()
 ---
 
 <Layout>
-  <PageHead slot="head" title="Home" />
-  <!--
+  <PageHead slot="head" title="Index" />
+
   <section>
-    <div class="rounded-lg border">
-      <div class="flex flex-col space-y-1.5 p-6">
-        <h3 class="text-3xl leading-none font-medium">er·u·dite</h3>
-        <p class="text-muted-foreground text-sm">
-          /ˈer(y)əˌdīt/ &bull; <span class="font-medium">adjective</span>
+    <div class="min-w-full">
+      <div class="prose mb-8">
+        <p>
+        Eli is a AI/design/font engineer interested in building font editors, AI-assisted type/font design, FOSS/libre graphics, blockchain(ETH, ZK, NFTs), RTL-i18n, Arabic, Islamic & Baháʼí Studies, solo startups, GNU/Linux, kids computers, math education, software UI/UX, and building simple Unix-like tools.
         </p>
       </div>
-      <div class="p-6 pt-0">
-        <p class="text-muted-foreground mb-2 text-sm">
-          astro-erudite is an opinionated, unstyled static blogging template
-          built with <Link
-            href="https://astro.build"
-            class="text-foreground"
-            external
-            underline>Astro</Link
-          >, <Link
-            href="https://tailwindcss.com"
-            class="text-foreground"
-            external
-            underline>Tailwind</Link
-          >, and <Link
-            href="https://ui.shadcn.com"
-            class="text-foreground"
-            external
-            underline>shadcn/ui</Link
-          >. Extraordinarily loosely based on the <Link
-            href="https://astro-micro.vercel.app/"
-            class="text-foreground"
-            external
-            underline>Astro Micro</Link
-          > theme.
-        </p>
-        <p class="text-muted-foreground text-sm">
-          To use this template, check out the <Link
-            href="https://github.com/jktrn/astro-erudite"
-            class="text-foreground"
-            underline
-            external>GitHub</Link
-          > repository.
+
+      <div class="prose">
+        <p>
+          <a href="https://github.com/eliheuer">GitHub</a><br />
+          <a href="https://x.com/eliheuer">X / Twitter</a><br />
+          <a href="https://mastodon.social/@eliheuer">Mastodon</a><br />
+          <a href="https://www.linkedin.com/in/eliheuer">LinkedIn</a><br />
+          <a href="mailto:elih@protonmail.com">Email</a>
         </p>
       </div>
     </div>
-  </section>
-  -->
-  <section class="flex flex-col gap-y-4">
-    <!--
-    <h2 class="text-2xl font-medium">Latest posts</h2>
-    -->
-    <ul class="flex flex-col gap-y-4">
-      {
-        blog.map((post) => (
-          <li>
-            <BlogCard entry={post} />
-          </li>
-        ))
-      }
-    </ul>
-    <!-- "See all posts" button temporarily disabled - only 2 posts currently -->
-    <!--
-    <div class="flex justify-center">
-      <Link
-        href="/"
-        class={buttonVariants({ variant: 'outline' }) + ' group'}
-      >
-        See all posts <span
-          class="ml-1.5 transition-transform group-hover:translate-x-1"
-          >&rarr;</span
-        >
-      </Link>
-    </div>
-    -->
   </section>
 </Layout>

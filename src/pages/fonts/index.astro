@@ -1,0 +1,30 @@
+---
+import PageHead from '@/components/PageHead.astro'
+import Layout from '@/layouts/Layout.astro'
+import { getCollection } from 'astro:content'
+import Link from '@/components/Link.astro'
+
+const fonts = await getCollection('fonts', ({ data }) => !data.draft)
+fonts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+---
+
+<Layout>
+  <PageHead slot="head" title="Fonts" />
+
+  <section>
+    <div class="prose">
+      {fonts.length > 0 ? (
+        <ul>
+          {fonts.map((font) => (
+            <li>
+              <Link href={`/fonts/${font.id}`}>{font.data.title}</Link>
+              <span class="text-muted-foreground"> — {font.data.description}</span>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p class="text-muted-foreground">Coming soon.</p>
+      )}
+    </div>
+  </section>
+</Layout>

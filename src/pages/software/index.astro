@@ -1,0 +1,30 @@
+---
+import PageHead from '@/components/PageHead.astro'
+import Layout from '@/layouts/Layout.astro'
+import { getCollection } from 'astro:content'
+import Link from '@/components/Link.astro'
+
+const software = await getCollection('software', ({ data }) => !data.draft)
+software.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+---
+
+<Layout>
+  <PageHead slot="head" title="Software" />
+
+  <section>
+    <div class="prose">
+      {software.length > 0 ? (
+        <ul>
+          {software.map((project) => (
+            <li>
+              <Link href={`/software/${project.id}`}>{project.data.title}</Link>
+              <span class="text-muted-foreground"> — {project.data.description}</span>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p class="text-muted-foreground">Coming soon.</p>
+      )}
+    </div>
+  </section>
+</Layout>

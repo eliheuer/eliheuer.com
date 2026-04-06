@@ -13,7 +13,7 @@
     sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --font-sans: var(--font-sans-bezy);
   --font-mono:
-    'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    'Hasubi Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     'Liberation Mono', 'Courier New', monospace;
 
   --color-background: var(--background);
@@ -53,6 +53,14 @@
 @font-face {
   font-family: 'Bezy Grotesk';
   src: url('/fonts/BezyGrotesk-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hasubi Mono';
+  src: url('/fonts/HasubiMono-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -105,7 +113,7 @@ html.use-bezy-font {
   font-family: 'Bezy Grotesk', -apple-system, BlinkMacSystemFont, ui-sans-serif, system-ui, sans-serif;
 }
 
-html.use-bezy-font * {
+html.use-bezy-font *:not(code):not(pre):not(pre *):not(code *):not(.ec-line):not(.ec-line *) {
   font-family: 'Bezy Grotesk', -apple-system, BlinkMacSystemFont, ui-sans-serif, system-ui, sans-serif !important;
 }
 
@@ -114,7 +122,7 @@ html.use-geist-font {
   font-family: 'Geist', -apple-system, BlinkMacSystemFont, ui-sans-serif, system-ui, sans-serif;
 }
 
-html.use-geist-font * {
+html.use-geist-font *:not(code):not(pre):not(pre *):not(code *):not(.ec-line):not(.ec-line *) {
   font-family: 'Geist', -apple-system, BlinkMacSystemFont, ui-sans-serif, system-ui, sans-serif !important;
 }
 

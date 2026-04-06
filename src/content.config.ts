@@ -45,4 +45,30 @@ const projects = defineCollection({
     }),
 })
 
-export const collections = { blog, authors, projects }
+const fonts = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/fonts' }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      date: z.coerce.date(),
+      image: image().optional(),
+      tags: z.array(z.string()).optional(),
+      draft: z.boolean().optional(),
+    }),
+})
+
+const software = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/software' }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      date: z.coerce.date(),
+      image: image().optional(),
+      tags: z.array(z.string()).optional(),
+      draft: z.boolean().optional(),
+    }),
+})
+
+export const collections = { blog, authors, projects, fonts, software }

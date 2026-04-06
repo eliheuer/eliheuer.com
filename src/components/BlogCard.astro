@@ -24,7 +24,7 @@ const formattedDate = formatDate(entry.data.date)
   class="hover:bg-secondary/50 rounded-xl border p-5 transition-colors duration-300 ease-in-out"
 >
   <Link
-    href={entry.collection === 'blog' ? `/${entry.id}` : `/${entry.collection}/${entry.id}`}
+    href={`/${entry.collection}/${entry.id}`}
     class="flex flex-col gap-5 sm:flex-row"
   >
     {
@@ -48,7 +48,7 @@ const formattedDate = formatDate(entry.data.date)
       </div>
 
       <div>
-        <p class="text-muted-foreground text-xs mt-auto">{formattedDate}</p>
+        <p class="text-muted-foreground text-sm mt-auto">{formattedDate}</p>
       </div>
     </div>
   </Link>

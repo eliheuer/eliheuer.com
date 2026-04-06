@@ -1,6 +1,6 @@
 ---
 title: 'Introducing Runebender Xilem'
-description: 'A free and open-source font editor built in Rust with GPU-accelerated rendering.'
+description: 'A free and open-source cross-platform font editor desktop app built in pure Rust with Xilem.'
 date: 2026-03-05
 tags: ['design', 'tools', 'aesthetics', 'customization']
 image: './bezy-screenshot.jpg'
@@ -9,31 +9,31 @@ authors: ['elih']
 
 ## Introducing Runebender Xilem
 
-A free and open-source font editor built in Rust with GPU-accelerated rendering.
+A free and open-source cross-platform font editor desktop app built in pure Rust with Xilem.
 
 Published March 5th, 2026
 
 <div class="pl-6 my-8 [&>*]:text-muted-foreground">
-<p>"The enjoyment of one's tools is an essential ingredient of successful work."</p>
+<p>&ldquo;The enjoyment of one&rsquo;s tools is an essential ingredient of successful work.&rdquo;</p>
 
 <p>—Donald Knuth</p>
 </div>
 
 ### What is Runebender Xilem?
 
-Runebender Xilem is a free and open-source font editor written in Rust. It reads and writes UFO (Unified Font Object) files and runs on macOS, Linux, and Windows. The project is very alpha and actively under development, but it can already open, edit, and save font sources with a set of drawing and transformation tools.
+Runebender Xilem is a free and open-source font editor written in Rust. It works with [UFO (Unified Font Object)](https://unifiedfontobject.org/) sources and [Designspace](https://fonttools.readthedocs.io/en/latest/designspaceLib/) files, and runs on macOS, GNU/Linux, and Windows. The project is approaching being a full working editor—a viable replacement for the most popular proprietary font editors for a technical user willing to do some work from the CLI and with an LLM assistant. Tasks like editing font info metadata and OpenType feature code were always time-consuming in GUI font editors; Runebender Xilem treats the GUI as a drawing surface and leaves the rest to tools that handle text better. Runebender Xilem is designed as a font editor for professionals and experts, there are already many font editors designed for prosumer users, but high end expert level font editors is an underexplored category.
 
-If you design typefaces—or want to start—and care about open tooling, this post explains what Runebender Xilem is, why it exists, and how to try it.
+The thing that makes Runebender unique is that it is a pure Rust application, not build on a WebView like Electron or Tauri. It is designed to be simple and easy to customize, and works we as a CLI application used by Unix eperts and AI agents.
 
 ### Where does it come from?
 
-The name "Runebender" comes from an earlier font editor project in the Linebender ecosystem. The original Runebender was built on Druid, a Rust GUI toolkit designed by Raph Levien and funded in part by Google Fonts. The idea was that a real application—a font editor—would drive the development of the toolkit, keeping it honest about what GUI frameworks actually need to do.
+The name "Runebender" comes from an earlier font editor project in the Linebender ecosystem. The original Runebender was built on Druid, a Rust GUI toolkit designed by Raph Levien.
 
-Druid made significant progress but was never production-ready. Its data model required cloning and equality testing on all app state, its lens mechanism for data binding grew confusing in complex UIs, and async integration was never satisfactorily solved. Druid is now officially discontinued.
+Druid made some progress but was never production-ready. Its data model required cloning and equality testing on all app state, its lens mechanism for data binding grew confusing in complex UIs, and async integration was never satisfactorily solved. Druid is now officially discontinued.
 
-But the work was not wasted. Druid's widget system was forked into Masonry, a retained widget tree library. And on top of Masonry, the Linebender team built Xilem—a new reactive UI framework that addresses Druid's architectural limitations while keeping the Rust-native, type-safe, GPU-accelerated approach that made Druid compelling in the first place.
+Druid's widget system was forked into Masonry, a retained widget tree library. And on top of Masonry, the Linebender ecosystem built Xilem—a new reactive UI framework that addresses Druid's architectural limitations while keeping the Rust-native, type-safe, GPU-accelerated approach that made Druid compelling in the first place.
 
-Runebender Xilem is the font editor rebuilt on this new foundation.
+Runebender Xilem not an officially endored Linebender project, but is Eli Heuer's attempt to finish the original Runebender Project using Xilem and the rest of the current Linebender ecosystem.
 
 ### Why Xilem?
 
@@ -45,34 +45,7 @@ Xilem takes a different approach inspired by SwiftUI and Elm. On every state cha
 
 The rendering pipeline ends at Vello, a GPU compute-centric 2D renderer also from the Linebender project. Where older toolkits paint to a CPU-rasterized canvas, Vello pushes path rendering to the GPU. For a font editor—where you might be zoomed into a complex glyph with dozens of cubic bezier segments, overlapping contours, and a live preview running simultaneously—this matters.
 
-### How is this different from the original Runebender?
-
-Beyond the framework change from Druid to Xilem, the editor itself has evolved:
-
-- **GPU-accelerated rendering** via Vello, replacing Druid's CPU-based Piet backend
-- **Hyperbezier drawing tool** — draw smooth G2-continuous curves using only on-curve points, with control points computed automatically by a spline solver. This is toggled with the H key and results can be converted to standard cubics with Cmd+Shift+H
-- **Background image tracing** — import a PNG or JPEG as a reference image (Cmd+I), then trace it locally with img2bez (Cmd+T) for deterministic bitmap-to-bezier conversion, or send it to QuiverAI (Cmd+Shift+Y) for cloud-based AI vectorization
-- **Outline refitting** — warp existing outlines to match a background image while preserving point count, types, and winding order, keeping contours interpolation-compatible for variable fonts
-- **Boolean path operations** via the linesweeper crate (remove overlap, union, subtract)
-- **Quadratic bezier support** alongside cubic, for TrueType-style outlines
-- **128-level undo/redo** with intelligent grouping for drags and nudges
-- **File watching** — external changes to the UFO on disk are detected automatically
-
-The original Runebender never reached a usable state. This version can already be used for real glyph editing work, with select, pen, knife, and preview tools, contour operations, copy/paste, and coordinate transformations.
-
-### Where does it fit in the font editor landscape?
-
-The professional type design world is dominated by a few tools. Glyphs and RoboFont are macOS-only commercial editors with strong communities—Glyphs for its design-first workflow, RoboFont for its deep Python scripting and automation. FontLab is the most feature-complete cross-platform commercial option. These are mature, capable tools that professional foundries depend on daily.
-
-On the open-source side, the situation is thinner. FontForge has been the standard free option for over two decades, but its C codebase and custom UI toolkit from the mid-2000s make it difficult to maintain and extend. MFEK takes a modular Unix-philosophy approach with separate specialized tools for glyph editing, metrics, and OpenType layout.
-
-Runebender Xilem occupies a different position. It is a single-window, Glyphs-influenced editor built entirely in Rust on a modern reactive framework with GPU rendering. It is not trying to replace Glyphs or RoboFont for professional production work—not yet. What it offers is:
-
-- **Cross-platform from day one** — the same editor on macOS, Linux, and Windows, using native windowing
-- **A modern, maintainable codebase** — Rust's safety guarantees, the Linebender ecosystem's well-factored libraries (kurbo for geometry, norad for UFO, parley for text layout), and Xilem's clean architecture make this a codebase that can grow without accumulating the kind of technical debt that has made FontForge hard to contribute to
-- **An open foundation for experimentation** — the hyperbezier tool, AI-assisted tracing, and outline refitting are examples of features that are easier to prototype when you control the full stack and aren't constrained by a plugin API
-
-For educators and students, it offers something else: a font editor where the internals are legible. The codebase is structured in clear modules—tools, paths, editing sessions, views—and the Rust ecosystem's documentation culture means the dependencies are well-documented too. If you want to understand how a font editor works, not just use one, this is a good place to start.
+Type design is best done in a flowstate, and for this kind of work video game like performance is needed, every lag and context switch takes the designer out of the zone.
 
 ### How to try it
 

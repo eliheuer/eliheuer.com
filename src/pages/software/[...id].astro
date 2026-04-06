@@ -1,0 +1,39 @@
+---
+import PostHead from '@/components/PostHead.astro'
+import { Button } from '@/components/ui/button'
+import Layout from '@/layouts/Layout.astro'
+import { Icon } from 'astro-icon/components'
+import { Image } from 'astro:assets'
+import { getCollection, render } from 'astro:content'
+
+export async function getStaticPaths() {
+  const software = await getCollection('software', ({ data }) => !data.draft)
+  return software.map((project) => ({
+    params: { id: project.id },
+    props: project,
+  }))
+}
+
+const project = Astro.props
+const { Content } = await render(project)
+---
+
+<Layout>
+  <PostHead slot="head" post={project} />
+  <section class="flex flex-col gap-y-8">
+    {
+      project.data.image && (
+        <Image
+          src={project.data.image}
+          alt={project.data.title}
+          width={1200}
+          height={630}
+          class="w-full object-cover mb-2 rounded-md"
+        />
+      )
+    }
+    <article class="prose">
+      <Content />
+    </article>
+  </section>
+</Layout>
