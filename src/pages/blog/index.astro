@@ -11,7 +11,8 @@ const allPosts = await getAllPosts()
   <PageHead slot="head" title="Blog" />
 
   <section class="flex flex-col gap-y-4">
-    <ul class="flex flex-col gap-y-4">
+    <!-- gap between cards: 1 unit -->
+    <ul class="flex flex-col gap-[36px]">
       {
         allPosts.map((post) => (
           <li>

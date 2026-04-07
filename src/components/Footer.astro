@@ -8,11 +8,12 @@ import ThemeToggle from './ThemeToggle.astro'
 import { Icon } from 'astro-icon/components'
 ---
 
-<footer class="py-4">
+<!-- 4 grid units top, 1 grid unit bottom -->
+<footer class="pt-[144px] px-[36px] pb-[36px]">
   <div
-    class="mx-auto flex flex-col items-center justify-center gap-y-2 px-6 sm:flex-row sm:justify-between w-full"
+    class="mx-auto flex flex-col items-end justify-center gap-y-2 sm:flex-row sm:justify-between w-full"
   >
-    <div class="flex flex-wrap items-center justify-center gap-x-2 text-center">
+    <div class="flex flex-wrap items-end justify-center gap-x-2 text-center">
       <span class="text-foreground">
         &copy; {new Date().getFullYear()} All rights reserved.
       </span>
@@ -22,7 +23,7 @@ import { Icon } from 'astro-icon/components'
         CC BY-SA 4.0
       </p>
     </div>
-    <div class="flex items-center gap-1">
+    <div class="flex items-end gap-1">
       <SocialIcons links={SOCIAL_LINKS} />
       <FontToggle transition:persist />
       <ThemeToggle transition:persist />

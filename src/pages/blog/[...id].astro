@@ -31,7 +31,7 @@ const authors = await parseAuthors(post.data.authors ?? [])
 
 <Layout>
   <PostHead slot="head" post={post} />
-  <section class="flex flex-col gap-y-8">
+  <div>
     {
       post.data.image && (
         <Image
@@ -39,19 +39,17 @@ const authors = await parseAuthors(post.data.authors ?? [])
           alt={post.data.title}
           width={1200}
           height={630}
-          class="w-full object-cover mb-2 rounded-md"
+          class="w-full object-cover"
         />
       )
     }
-    <section class="flex flex-col gap-y-6">
-      <div class="flex flex-col">
-      </div>
-    </section>
 
-    <article class="prose mt-[-2rem]">
+    <h1 style="font-size: 72px; line-height: 1.1; font-weight: 500; margin-top: 72px; margin-bottom: 36px;">{post.data.title}</h1>
+
+    <article class="prose max-w-[65ch]">
       <Content />
     </article>
-  </section>
+  </div>
 
   <Button
     variant="outline"

@@ -1,129 +1,151 @@
 @reference './global.css';
 
+/* ── Design system: 24px / 36px baseline grid ──────────────── */
+/* Grid unit: 36px. Half unit: 18px.                            */
+/* All spacing is a multiple of 36px unless noted.              */
+/* Headings: same size as body, uppercase, letterspaced, 500.   */
+
 @layer components {
   .prose {
-    @apply text-foreground text-base leading-[1.4];
+    color: var(--foreground);
 
     p {
-      @apply text-foreground tracking-normal my-6 not-first:mt-6;
+      margin: 36px 0; /* 1 unit */
     }
 
-    h1 {
-      @apply text-foreground mt-0 mb-8 scroll-m-20 text-6xl leading-14 font-normal tracking-tighter;
+    p:first-child {
+      margin-top: 0;
     }
 
-    h2 {
-      @apply text-foreground mt-8 mb-8 scroll-m-20 text-4xl leading-10 font-normal tracking-tight;
+    p:last-child {
+      margin-bottom: 0;
     }
 
-    h3 {
-      @apply text-foreground mt-8 mb-4 scroll-m-20 text-3xl leading-snug font-normal;
-    }
-
-    h4 {
-      @apply text-foreground mt-8 mb-4 scroll-m-20 text-2xl leading-snug font-medium;
-    }
-
-    h5 {
-      @apply text-foreground mt-6 mb-4 scroll-m-20 text-xl leading-snug font-medium;
-    }
-
-    h6 {
-      @apply text-foreground mt-6 mb-4 scroll-m-20 text-lg leading-snug font-medium;
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--foreground);
+      font-weight: 500;
+      font-size: 1.5em; /* 36px — 1.5x body */
+      line-height: 1.2;
+      margin-top: 72px; /* 2 units */
+      margin-bottom: 18px; /* half unit */
+      scroll-margin-top: 5rem;
     }
 
     a {
-      @apply text-foreground font-normal break-words underline decoration-foreground/20 underline-offset-[4px] hover:decoration-foreground/60 transition-colors;
+      color: var(--foreground);
+      font-weight: normal;
+      text-decoration: underline;
+      text-decoration-color: color-mix(in oklch, var(--foreground) 20%, transparent);
+      text-underline-offset: 4px;
+      word-break: break-word;
+      transition: text-decoration-color 0.2s;
+    }
+
+    a:hover {
+      text-decoration-color: color-mix(in oklch, var(--foreground) 60%, transparent);
     }
 
     strong {
-      @apply text-foreground font-medium;
+      color: var(--foreground);
+      font-weight: 500;
     }
 
     ul {
-      @apply marker:text-foreground/40 my-6 ml-8 list-disc [&>li]:mt-2;
+      margin: 36px 0; /* 1 unit */
+      margin-left: 2rem;
+      list-style-type: disc;
     }
 
     ol {
-      @apply marker:text-foreground/40 my-6 ml-8 list-decimal [&>li]:mt-2;
-      @apply [&[type='A']]:list-[upper-alpha] [&[type='I']]:list-[upper-roman] [&[type='a']]:list-[lower-alpha] [&[type='i']]:list-[lower-roman];
+      margin: 36px 0; /* 1 unit */
+      margin-left: 2rem;
+      list-style-type: decimal;
     }
 
     li {
-      @apply text-foreground/90 pl-2 [&>p]:my-0;
+      color: var(--foreground);
+      padding-left: 0.5rem;
     }
 
-    ul ul,
-    ol ol,
-    ul ol,
-    ol ul {
-      @apply marker:text-foreground/40 my-2 ml-6;
+    li > p {
+      margin: 0;
+    }
+
+    ul ul, ol ol, ul ol, ol ul {
+      margin: 0;
+      margin-left: 1.5rem;
     }
 
     code {
-      @apply bg-muted/50 text-foreground relative rounded-sm px-[0.3rem] py-[0.2rem] text-[0.9em] font-medium break-words;
+      @apply bg-muted/50;
+      color: var(--foreground);
+      font-size: 0.9em;
+      font-weight: 500;
+      padding: 0.15em 0.3em;
+      border-radius: 2px;
+      word-break: break-word;
       @apply [&>span[data-line='']>*]:text-(--shiki-light) dark:[&>span[data-line='']>*]:text-(--shiki-dark);
     }
 
     blockquote {
-      @apply [&_*]:text-muted-foreground my-8 border-l-2 pl-6;
+      margin: 36px 0; /* 1 unit */
+      border-left: 2px solid var(--border);
+      padding-left: 1.5rem;
     }
 
     hr {
-      @apply border-border my-10 border-t;
+      margin: 72px 0; /* 2 units */
+      border-top: 1px solid var(--border);
     }
 
     table {
-      @apply my-8 block w-full overflow-x-auto text-lg;
+      margin: 36px 0; /* 1 unit */
+      display: block;
+      width: 100%;
+      overflow-x: auto;
     }
 
     thead {
-      @apply border-muted-foreground/30 border-b;
+      border-bottom: 1px solid var(--border);
     }
 
     th {
-      @apply px-4 py-2 font-medium;
-      @apply text-left [&[align=center]]:text-center [&[align=right]]:text-right;
+      padding: 0.5rem 1rem;
+      font-weight: 500;
+      text-align: left;
     }
 
     tr {
-      @apply border-muted-foreground/30 border-y first:border-t-0 last:border-b-0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    tr:last-child {
+      border-bottom: none;
     }
 
     td {
-      @apply fix-margin text-foreground/90 text-lg px-4 py-2 align-top break-words;
-      @apply text-left [&[align=center]]:text-center [&[align=right]]:text-right;
+      padding: 0.5rem 1rem;
+      color: var(--foreground);
+      vertical-align: top;
+      word-break: break-word;
+      text-align: left;
     }
 
-    img,
-    video,
-    figure,
-    .expressive-code {
-      @apply my-8;
-    }
-
-    summary {
-      @apply [&~*]:base [&~*]:fix-margin;
+    img, video, figure, .expressive-code {
+      margin: 36px 0; /* 1 unit */
     }
 
     kbd {
-      @apply text-foreground bg-muted border-border rounded-md border px-2 py-1 text-base font-medium;
-    }
-
-    .katex-display {
-      @apply text-foreground/90 my-8 overflow-x-auto overflow-y-hidden py-2 tracking-normal;
+      color: var(--foreground);
+      background: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 0.15em 0.5em;
+      font-weight: 500;
     }
   }
 }
 
 @utility fix-margin {
   @apply [&>*]:first:mt-0! [&>*]:last:mb-0!;
-}
-
-@utility small {
-  @apply text-lg leading-relaxed [&_code]:text-base [&_img,video,figure,details,blockquote,.katex-display,.expressive-code]:my-4! [&_li,ol]:mt-0 [&_p]:my-3! [&_ul]:my-0;
-}
-
-@utility base {
-  @apply text-xl leading-relaxed [&_code]:text-lg [&_img,video,figure,details,blockquote,.katex-display,.expressive-code]:my-6! [&_li,ol]:mt-0 [&_p]:my-4! [&_ul]:my-0;
 }

@@ -1,10 +1,5 @@
 ---
-import AvatarComponent from '@/components/ui/avatar'
-import { Badge } from '@/components/ui/badge'
-import { Separator } from '@/components/ui/separator'
-import { parseAuthors } from '@/lib/data-utils'
-import { formatDate, readingTime } from '@/lib/utils'
-import { Icon } from 'astro-icon/components'
+import { formatDate } from '@/lib/utils'
 import { Image } from 'astro:assets'
 import type { CollectionEntry } from 'astro:content'
 import Link from './Link.astro'
@@ -15,41 +10,34 @@ interface Props {
 
 const { entry } = Astro.props
 const formattedDate = formatDate(entry.data.date)
-// We no longer need these lines
-// const readTime = readingTime(entry.body!)
-// const authors = await parseAuthors(entry.data.authors ?? [])
 ---
 
-<div
-  class="hover:bg-secondary/50 rounded-xl border p-5 transition-colors duration-300 ease-in-out"
->
-  <Link
-    href={`/${entry.collection}/${entry.id}`}
-    class="flex flex-col gap-5 sm:flex-row sm:items-stretch"
-  >
+{/* card padding: 1 unit (18px). gap between image and text: 1 unit. */}
+<div class="border-[1.5px] border-white/40 p-[36px] transition-colors duration-300 ease-in-out hover:bg-secondary/50">
+  <Link href={`/${entry.collection}/${entry.id}`} class="grid grid-cols-1 md:grid-cols-2 gap-[36px] md:items-stretch">
     {
       entry.data.image && (
-        <div class="w-full sm:max-w-3xs sm:shrink-0">
+        <div>
           <Image
             src={entry.data.image}
             alt={entry.data.title}
             width={1200}
             height={630}
-            class="w-full h-full object-cover rounded-md"
+            class="w-full h-full object-cover block"
           />
         </div>
       )
     }
 
-    <div class="grow flex flex-col justify-between">
+    <div class="flex flex-col justify-between">
       <div>
-        <h3 class="text-2xl font-normal tracking-tight">{entry.data.title}</h3>
-        <p class="text-foreground text-sm">{entry.data.description}</p>
+        {/* negative margin compensates for line-height space above cap height */}
+        <h3 style="font-size: 1.5em; line-height: 1.2; font-weight: 500;">{entry.data.title}</h3>
+        <br />
+        <p>{entry.data.description}</p>
       </div>
-
-      <div>
-        <p class="text-foreground text-sm">{formattedDate}</p>
-      </div>
+      {/* negative margin compensates for line-height space below baseline */}
+      <p style="line-height: 1; margin-bottom: -0.08em;">{formattedDate}</p>
     </div>
   </Link>
 </div>
