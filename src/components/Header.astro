@@ -1,11 +1,32 @@
 ---
 import Link from '@/components/Link.astro'
-import ThemeToggle from '@/components/ThemeToggle.astro'
-import FontToggle from '@/components/FontToggle.astro'
 import MobileMenu from '@/components/ui/mobile-menu'
-import { NAV_LINKS, SITE } from '@/consts'
+import { NAV_LINKS } from '@/consts'
 import { Image } from 'astro:assets'
-import logo from '../../public/static/logo.png'
+import logo from '../../public/static/logo-cropped.png'
+
+interface Props {
+  headline?: string
+}
+
+const path = Astro.url.pathname
+let headline = Astro.props.headline
+
+if (!headline) {
+  if (path === '/') {
+    headline = 'Eli Heuer—AI/Design Engineer'
+  } else if (path.startsWith('/blog')) {
+    headline = "Eli Heuer's Blog"
+  } else if (path.startsWith('/software')) {
+    headline = "Eli Heuer's Software Projects"
+  } else if (path.startsWith('/fonts')) {
+    headline = "Eli Heuer's Type Design Projects"
+  } else if (path.startsWith('/graphics')) {
+    headline = "Eli Heuer's Graphic Design Projects"
+  } else {
+    headline = 'Eli Heuer'
+  }
+}
 ---
 
 <header
@@ -13,19 +34,19 @@ import logo from '../../public/static/logo.png'
   transition:persist
 >
   <div
-    class="mx-auto flex max-w-2xl flex-wrap items-center justify-between gap-4 p-2 px-2 pt-6"
+    class="mx-auto flex flex-wrap items-center justify-between gap-4 px-6 pt-6 pb-8 w-full"
   >
-    <Link href="/" class="flex shrink-0 items-center gap-2 text-xl font-medium">
-      <Image src={logo} alt="Logo" class="size-8" />
-      {SITE.title}
+    <Link href="/" class="flex shrink-0 items-center gap-1 font-normal">
+      <Image src={logo} alt="Logo" class="size-6" />
+      {headline}
     </Link>
     <div class="flex items-center gap-1 md:gap-2">
-      <nav class="hidden items-center gap-2 text-xl sm:gap-3 md:flex">
+      <nav class="hidden items-center gap-2 sm:gap-3 md:flex">
         {
           NAV_LINKS.map((item) => (
             <Link
               href={item.href}
-              class="text-foreground/60 hover:text-foreground/80 capitalize transition-colors"
+              class="text-foreground capitalize transition-colors"
             >
               {item.label}
             </Link>
@@ -33,8 +54,6 @@ import logo from '../../public/static/logo.png'
         }
       </nav>
       <MobileMenu client:load transition:persist />
-      <FontToggle transition:persist />
-      <ThemeToggle transition:persist />
     </div>
   </div>
 </header>

@@ -2,10 +2,10 @@
 
 @layer components {
   .prose {
-    @apply text-foreground text-xl leading-[1.4];
+    @apply text-foreground text-base leading-[1.4];
 
     p {
-      @apply text-foreground/90 tracking-normal my-6 not-first:mt-6;
+      @apply text-foreground tracking-normal my-6 not-first:mt-6;
     }
 
     h1 {
@@ -33,7 +33,7 @@
     }
 
     a {
-      @apply text-foreground decoration-muted-foreground hover:decoration-foreground font-normal break-words underline underline-offset-[4px] transition-colors;
+      @apply text-foreground font-normal break-words underline decoration-foreground/20 underline-offset-[4px] hover:decoration-foreground/60 transition-colors;
     }
 
     strong {

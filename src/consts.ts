@@ -17,12 +17,16 @@ export const NAV_LINKS: SocialLink[] = [
     label: 'blog',
   },
   {
+    href: '/software',
+    label: 'software',
+  },
+  {
     href: '/fonts',
     label: 'fonts',
   },
   {
-    href: '/software',
-    label: 'software',
+    href: '/graphics',
+    label: 'graphics',
   },
 ]
 
