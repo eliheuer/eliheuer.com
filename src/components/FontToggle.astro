@@ -30,6 +30,5 @@ const defaultFont = 'bezy'
     });
   }
 
-  document.addEventListener('DOMContentLoaded', initFontToggle);
-  document.addEventListener('astro:after-swap', initFontToggle);
+  document.addEventListener('astro:page-load', initFontToggle);
 </script>
