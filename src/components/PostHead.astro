@@ -3,7 +3,7 @@ import { SITE } from '@/consts'
 import type { CollectionEntry } from 'astro:content'
 
 interface Props {
-  post: CollectionEntry<'blog'>
+  post: CollectionEntry<'blog'> | CollectionEntry<'fonts'> | CollectionEntry<'software'>
 }
 
 const { post } = Astro.props
@@ -11,7 +11,7 @@ const { post } = Astro.props
 const title = post.data.title || SITE.title
 const description = post.data.description || SITE.description
 const defaultImage = new URL('/static/1200x630.png', Astro.site).toString()
-const author = post.data.authors ? post.data.authors.join(', ') : SITE.author
+const author = 'authors' in post.data && post.data.authors ? post.data.authors.join(', ') : SITE.author
 
 // We'll use a direct path to the image in the public directory
 const postId = post.id.split('/')[0]; // Get the post ID (folder name)
