@@ -20,20 +20,23 @@ const { Content } = await render(project)
 
 <Layout>
   <PostHead slot="head" post={project} />
-  <section class="flex flex-col gap-y-8">
+  <div>
     {
       project.data.image && (
         <Image
           src={project.data.image}
           alt={project.data.title}
-          width={1200}
-          height={630}
-          class="w-full object-cover mb-2 rounded-md"
+          width={3072}
+          height={2048}
+          class="w-full object-cover"
         />
       )
     }
-    <article class="prose">
+
+    <h1 style="font-size: 72px; line-height: 1.1; font-weight: 500; margin-top: 72px; margin-bottom: 36px;">{project.data.title}</h1>
+
+    <article class="prose max-w-[65ch]">
       <Content />
     </article>
-  </section>
+  </div>
 </Layout>

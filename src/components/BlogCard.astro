@@ -5,7 +5,7 @@ import type { CollectionEntry } from 'astro:content'
 import Link from './Link.astro'
 
 interface Props {
-  entry: CollectionEntry<'blog'>
+  entry: CollectionEntry<'blog'> | CollectionEntry<'fonts'> | CollectionEntry<'software'>
 }
 
 const { entry } = Astro.props
@@ -21,8 +21,8 @@ const formattedDate = formatDate(entry.data.date)
           <Image
             src={entry.data.image}
             alt={entry.data.title}
-            width={1200}
-            height={630}
+            width={3072}
+            height={2048}
             class="w-full h-full object-cover block"
           />
         </div>

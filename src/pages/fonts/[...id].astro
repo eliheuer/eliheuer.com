@@ -1,8 +1,7 @@
 ---
 import PostHead from '@/components/PostHead.astro'
-import { Button } from '@/components/ui/button'
 import Layout from '@/layouts/Layout.astro'
-import { Icon } from 'astro-icon/components'
+import { formatDate } from '@/lib/utils'
 import { Image } from 'astro:assets'
 import { getCollection, render } from 'astro:content'
 
@@ -16,24 +15,115 @@ export async function getStaticPaths() {
 
 const font = Astro.props
 const { Content } = await render(font)
+const fontFile = font.data.fontFile
+const fontFamily = `"${font.data.title}", sans-serif`
 ---
 
 <Layout>
   <PostHead slot="head" post={font} />
-  <section class="flex flex-col gap-y-8">
+  <div>
     {
       font.data.image && (
         <Image
           src={font.data.image}
           alt={font.data.title}
-          width={1200}
-          height={630}
-          class="w-full object-cover mb-2 rounded-md"
+          width={3072}
+          height={2048}
+          class="w-full object-cover"
         />
       )
     }
-    <article class="prose">
+
+    <h1 style="font-size: 72px; line-height: 1.1; font-weight: 500; margin-top: 72px; margin-bottom: 36px;">{font.data.title}</h1>
+
+    <div class="max-w-[65ch] mb-[36px]">
+      <p class="text-muted-foreground">{font.data.description}</p>
+      {font.data.tags && (
+        <p class="text-muted-foreground mt-2">{font.data.tags.join(' · ')}</p>
+      )}
+    </div>
+
+    {fontFile ? (
+      <section class="specimen" data-font-file={fontFile} data-font-name={font.data.title}>
+        <div class="border-[1.5px] border-white/25 p-[36px] mb-[36px]">
+          <h2 class="text-muted-foreground text-sm mb-4">Alphabet</h2>
+          <p class="specimen-font" style="font-size: 36px; line-height: 1.3;">
+            ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />
+            abcdefghijklmnopqrstuvwxyz
+          </p>
+        </div>
+
+        <div class="border-[1.5px] border-white/25 p-[36px] mb-[36px]">
+          <h2 class="text-muted-foreground text-sm mb-4">Figures & Punctuation</h2>
+          <p class="specimen-font" style="font-size: 36px; line-height: 1.3;">
+            0123456789<br />
+            !@#$%^&*(),.;:?¿¡'""-–—/\{}[]
+          </p>
+        </div>
+
+        <div class="border-[1.5px] border-white/25 p-[36px] mb-[36px]">
+          <h2 class="text-muted-foreground text-sm mb-4">Pangram</h2>
+          <p class="specimen-font" style="font-size: 48px; line-height: 1.2;">
+            The quick brown fox jumps over the lazy dog
+          </p>
+        </div>
+
+        <div class="border-[1.5px] border-white/25 p-[36px] mb-[36px]">
+          <h2 class="text-muted-foreground text-sm mb-4">Size Ramp</h2>
+          <p class="specimen-font" style="font-size: 72px; line-height: 1.1;">Hamburgevons</p>
+          <p class="specimen-font" style="font-size: 48px; line-height: 1.2;">Hamburgevons</p>
+          <p class="specimen-font" style="font-size: 36px; line-height: 1.3;">Hamburgevons</p>
+          <p class="specimen-font" style="font-size: 24px; line-height: 1.4;">Hamburgevons</p>
+          <p class="specimen-font" style="font-size: 18px; line-height: 1.5;">Hamburgevons</p>
+          <p class="specimen-font" style="font-size: 14px; line-height: 1.5;">Hamburgevons</p>
+        </div>
+
+        <div class="border-[1.5px] border-white/25 p-[36px] mb-[36px]">
+          <h2 class="text-muted-foreground text-sm mb-4">Paragraph</h2>
+          <p class="specimen-font" style="font-size: 18px; line-height: 1.6; max-width: 65ch;">
+            Typography is the craft of endowing human language with a durable visual form. The practice of typography requires an understanding of the traditions and conventions that have evolved over centuries, as well as an awareness of the technologies—both old and new—that make the reproduction of letterforms possible. A well-set page of text is a window into history, culture, and the aesthetics of communication.
+          </p>
+        </div>
+
+        <div class="border-[1.5px] border-white/25 p-[36px] mb-[36px]">
+          <h2 class="text-muted-foreground text-sm mb-4" id="tester-label">Type Tester</h2>
+          <div
+            class="specimen-font w-full outline-none min-h-[120px]"
+            contenteditable="true"
+            style="font-size: 48px; line-height: 1.2;"
+            aria-labelledby="tester-label"
+          >
+            Type something here...
+          </div>
+        </div>
+      </section>
+    ) : (
+      <div class="border-[1.5px] border-white/25 p-[36px] mb-[36px]">
+        <p class="text-muted-foreground">Font specimen coming soon — font file not yet available.</p>
+      </div>
+    )}
+
+    <article class="prose max-w-[65ch]">
       <Content />
     </article>
-  </section>
+  </div>
 </Layout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const specimen = document.querySelector('.specimen') as HTMLElement | null
+    if (!specimen) return
+
+    const fontFile = specimen.dataset.fontFile
+    const fontName = specimen.dataset.fontName
+    if (!fontFile || !fontName) return
+
+    const face = new FontFace(fontName, `url(${fontFile})`)
+    face.load().then((loaded) => {
+      document.fonts.add(loaded)
+      document.querySelectorAll('.specimen-font').forEach((el) => {
+        ;(el as HTMLElement).style.fontFamily = `"${fontName}", sans-serif`
+      })
+    })
+  })
+</script>

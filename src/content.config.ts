@@ -55,6 +55,7 @@ const fonts = defineCollection({
       image: image().optional(),
       tags: z.array(z.string()).optional(),
       draft: z.boolean().optional(),
+      fontFile: z.string().optional(),
     }),
 })
 
