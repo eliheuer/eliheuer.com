@@ -8,13 +8,9 @@ authors: ['Eli Heuer']
 ---
 import { Image } from 'astro:assets'
 import YouStoleMyIdeaImage from './you-stole-my-idea.png'
-import Identity from './identity.png'
-import OpenSource from './open-source.png'
 import Pepe from './pepe.jpg'
-import PepeChart from './pepe-chart.png'
 import Hpos from './hpos.webp'
 import Shanzhai from './shanzhai.jpg'
-import Gold from './gold.webp'
 import Vitalik from './vitalik.png'
 
 Published May 19th, 2025. Second edition April 19th, 2026.
@@ -32,7 +28,7 @@ Alice and Bob both work 30 hours per week creating a similar digital good. They 
 
 Alice captures 90% of the value she creates; Bob captures only 10%. Yet Bob ends the week with one more unit of value than Alice, for the same hours of work.
 
-Alice is running *direct value capture*: many-to-one, closed, permissioned. Bob is running *diffuse value capture*: many-to-many, open, permissionless. The two exist on a spectrum, and extremes on either end are rarely workable.
+Alice is running direct value capture: many-to-one, closed, permissioned. Bob is running diffuse value capture: many-to-many, open, permissionless. The two exist on a spectrum, and extremes on either end are rarely workable.
 
 The upside on the diffuse end has no ceiling. Produce 1,000 units and capture 1%, or 1,000,000 and capture 0.001%, and the absolute returns can still dwarf what direct capture allows.
 
@@ -41,14 +37,14 @@ The upside on the diffuse end has no ceiling. Produce 1,000 units and capture 1%
 <div class="pl-6 my-8 [&>*]:text-muted-foreground">
 <p>“Print created national uniformity and government centralism, but also individualism and opposition to government as such.”</p>
 
-<p>—Marshall McLuhan, *The Gutenberg Galaxy*, 1962.</p>
+<p>—Marshall McLuhan, The Gutenberg Galaxy, 1962.</p>
 </div>
 
 Authorship and originality are downstream of the dominant medium of reproduction. McLuhan's point—that the printing press created the modern individual as much as it created the modern book—runs in reverse, too. When copying is cheap and decentralized, the bounded originating author becomes harder to defend.
 
 For most of human history, cultural production was diffuse: stories built on stories, songs on songs. Before the printing press, works often circulated anonymously or under famous names borrowed for prestige; scribes copied freely because duplication itself was the bottleneck. The press collapsed that bottleneck and Western culture moved increasingly direct, culminating in the 20th-century broadcast era of Hollywood, television, music, and publishing. At the peak of that direct wave, the personal computer arrived and began swinging the pendulum back—not to a pre-industrial model, but to one made possible by decentralized global networks.
 
-Cultural adaptation lags technological change. More than two centuries passed between the European printing press and the Statute of Anne, the first law to recognize *authors*—rather than printers—as rights-holders. The cycle has accelerated since, but the lag persists.
+Cultural adaptation lags technological change. More than two centuries passed between the European printing press and the Statute of Anne, the first law to recognize authors—rather than printers—as rights-holders. The cycle has accelerated since, but the lag persists.
 
 | Year | Tech/Event | Immediate Reaction | Lasting Legal Shift |
 |------|--------------|--------------------|---------------------|
@@ -82,9 +78,9 @@ What Han describes is not a stylistic preference but a different theory of art�
   class="rounded-md"
 />
 
-In late November 2023, DeepSeek-AI open-sourced its DeepSeek LLM 7B and 67B models, which outperformed Meta's Llama 2 70B on HumanEval, GSM8K, and MATH. Fourteen months later, on January 20, 2025, it unveiled DeepSeek-R1, a reinforcement-learning fine-tune of DeepSeek-V3—a 671B-parameter Mixture-of-Experts model with about 37B active parameters per token—that matched OpenAI's o1 on reasoning benchmarks like AIME 2024 and MATH-500. DeepSeek reported that V3's final pretraining run cost roughly $5.6M in GPU-hours, a figure that excludes R1's subsequent RL stage and all prior research. The full 671B model still requires server-class hardware to run, but the distilled R1 variants—32B and 70B—fit on one or two consumer GPUs at common quantizations.
+In late November 2023, DeepSeek-AI open-sourced its DeepSeek LLM 7B and 67B models, which outperformed Meta's Llama 2 70B on HumanEval, GSM8K, and MATH. Fourteen months later, on January 20, 2025, it unveiled DeepSeek-R1, a reinforcement-learning fine-tune of DeepSeek-V3—a 671B-parameter Mixture-of-Experts model with about 37B active parameters per token—that matched OpenAI's o1 on reasoning benchmarks like AIME 2024 and MATH-500. DeepSeek reported that V3's final pretraining run cost roughly \$5.6M in GPU-hours, a figure that excludes R1's subsequent RL stage and all prior research. The full 671B model still requires server-class hardware to run, but the distilled R1 variants—32B and 70B—fit on one or two consumer GPUs at common quantizations.
 
-Western incumbents still cling to a direct value capture mindset—API call metering, closed weights, NDAs—while Chinese labs treat the model itself as advertising for downstream services, hardware, and prestige. A thin proprietary layer is all that's needed for coordination, and even that doubles as trading alpha for their AI quant funds.
+Western incumbents still cling to a more direct value capture mindset—API call metering, closed weights, NDAs—while Chinese labs treat the model itself as advertising for downstream services, hardware, and prestige. A thin proprietary layer is all that's needed for coordination, and even that doubles as trading alpha for their AI quant funds.
 
 Western critics often portray China's loose stance on intellectual property as a drag on innovation. In an AI-driven century, it may prove prescient. Ancient Chinese views on authorship—rooted in naturalistic processes and continual transformation—may end up more closely resembling the IP norms of the 21st century than the romantic Western model: less a God-like act of creation from a single source, more like evolution itself.
 
@@ -96,7 +92,7 @@ Most failures of post-Marx socialist experiments came from trying to solve probl
 
 ## 4 Neural Networks are Diffuse
 
-Neural networks are diffuse by nature, and direct value capture does not map well onto them.
+Neural networks are diffuse by nature, and more direct value capture does not map well onto them.
 
 Art, music, code, design, and other cultural artifacts—culled from the open web—are diffused across latent space. Once creativity is encoded as a multi-trillion-parameter fog, the notion that you can meter each droplet of inspiration the way you once metered a DVD sale becomes economically and technically incoherent.
 
@@ -110,11 +106,11 @@ The increasingly diffuse nature of cultural production—and the growing opennes
 
 2. Massively accelerated AI-driven content creation, built on a remix paradigm and inherently diffuse models.
 
-3. Hyperfinancialization—the spread of crypto, prediction markets, and tokenized incentives into everyday activity—which blurs the line between leisure and labor.
+3. Hyperfinancialization—the spread of crypto, tokenized incentives, TikTok-like creator payments, prediction markets, etc., into everyday activity—which blurs the line between leisure and labor.
 
-This shift isn't driven by political will or personal preference. As Stewart Brand put it, information wants to be free; or, more concretely, it flows downhill—a constant, unidirectional force that doesn’t reverse with each barrier it breaches. Efforts to restrict the internet may delay its progress, but they never succeed in stopping it—not in any timeline.
+This shift isn't driven by political will or personal preference. Stewart Brand captured the tension: “Information wants to be free. Information also wants to be expensive… That tension will not go away.” The tension doesn't go away—but market competition keeps resolving it in one direction. In a free market, prices fall toward the marginal cost of production, and for information that cost is near zero. Competition eventually breaches every barrier built to hold prices above that floor, and the ground rarely comes back. The motion is a ratchet. This is why I see potential in diffuse value capture business models, where startups can compete with big incumbents by working with the grain of the software medium and strategically building thin capture layers into ecosystems that leak more value than many traditional US tech companies are comfortable with. 
 
-## 5 The Hacker Ethic & Free Information
+## 5 The Hacker Ethic
 
 <div class="pl-6 my-8 [&>*]:text-muted-foreground">
 <p>The precepts of this revolutionary Hacker Ethic were not so much debated and discussed as silently agreed upon. No manifestos were issued. No missionaries tried to gather converts. The computer did the converting.</p>
@@ -122,9 +118,9 @@ This shift isn't driven by political will or personal preference. As Stewart Bra
 <p>—Steven Levy, Hackers, 1984.</p>
 </div>
 
-Computers speak in copies, and the cost of duplication is effectively zero. When the medium itself is infinite replication, economic models based on scarcity become increasingly difficult to maintain—the technology pulls toward abundance and sharing.
+Computers speak in copies, and the cost of duplication is effectively zero. When the medium itself is infinite replication, economic models based on overly direct value capture become increasingly difficult to maintain—the technology pulls toward abundance and sharing.
 
-The architecture of computing encodes this "hacker ethic" at its core, much like how neural networks are diffuse by nature.
+The architecture of computing encodes this "hacker ethic" at its core, much like neural networks are diffuse by nature. McLuhan's larger point: a medium's form has second- and third-order effects on culture, far beyond its obvious uses. A medium of costless copying reshapes norms around authorship, labor, and property whether anyone wills it or not.
 
 Artificial scarcity imposed by legal means in the digital realm is an awkward simulacrum of real-world scarcity. Forcing physical-world notions of property onto information systems creates endless friction and runs counter to the grain of the medium. This primal, often unspoken orientation at the heart of computing is what Richard Stallman later formalized as software freedom.
 
@@ -134,7 +130,7 @@ Artificial scarcity imposed by legal means in the digital realm is an awkward si
 <p>—Richard Stallman, The GNU Manifesto, 1985.</p>
 </div>
 
-Free software—and its defanged offshoot, open source—has been at the core of computing culture ever since. As a result, programming culture has adapted to the shift toward diffuse value capture more readily than most other industries. In contrast, neighboring professions have struggled to move beyond the 20th-century mindset of direct value capture, along with its emphasis on authorship and originality.
+Free software—and its defanged offshoot, open source—has been at the core of computing culture ever since. As a result, programming culture has adapted to the shift toward diffuse value capture more readily than most other industries. In contrast, neighboring professions have struggled to move beyond the 20th-century mindset of more direct value capture, along with its emphasis on authorship and originality.
 
 <Image
   src={YouStoleMyIdeaImage}
@@ -144,43 +140,19 @@ Free software—and its defanged offshoot, open source—has been at the core of
   class="rounded-md"
 />
 
-Even within programming culture, there’s a gap between those who create value and those who capture it. Bill Gates’s fortune dwarfs that of Linus Torvalds or Richard Stallman, despite the latter having contributed significantly more to computing and the world at large. In Gates’s famous Letter to Hobbyists, software is treated as a naturally scarce product—no different from hardware. The diffuse nature of software and its unique economic properties never enter the picture.
+Despite its massive success, free and open-source software culture still struggles to develop effective systems for value capture and coordination. In many domains, it remains a niche—often relegated to controlled opposition, hobby projects, unpaid or underpaid labor, resume padding, or pawns in commoditize-your-complement strategies. The ecosystem continues to grapple with how to natively and diffusely capture value and coordinate production on its own terms.
 
-Despite its massive success, free and open-source software culture still struggles to develop effective systems for value capture and coordination. In many domains, it remains a niche—often relegated to controlled opposition, hobby projects, unpaid or underpaid labor, résumé padding, or pawns in commoditize-your-complement strategies. The ecosystem continues to grapple with how to natively and diffusely capture value and coordinate production on its own terms.
-
-<Image
-  src={OpenSource}
-  alt="A meme about open source without diffuse value capture"
-  width={1536}
-  height={1024}
-  class="rounded-md"
-/>
-
-Corporate patronage has been a primary driver of open-source development and one of the main ways value is captured from it. However, the direct value capture systems used by big tech sometimes run counter to the diffuse nature of open-source.
+Corporate patronage has been a primary driver of open-source development and one of the main ways value is captured from it. However, the more direct value capture systems used by big tech sometimes run counter to the diffuse nature of open-source.
 
 Many current forms of corporate patronage tends to be direct. Involving layers of bureaucracy and middlemen, with everything needing to be accounted for in ways legible to middle managers. This can create blind-metric behavior, where open-source developers chase arbitrary KPIs rather than focusing on actual value creation. It can slow down development and add friction to the open, collaborative ethos of open-source.
 
-Once an open-source developer becomes integrated into direct value capture systems, they're often incentivized to gatekeep their work to preserve personal advantage. This can reduce incentives to share knowledge, mentor others, or collaborate openly—qualities that make open-source so powerful.
+Once an open-source developer becomes integrated into more direct value capture systems, they're often incentivized to gatekeep their work to preserve personal advantage. This can reduce incentives to share knowledge, mentor others, or collaborate openly—qualities that make open-source so powerful.
 
-Diffuse value capture strategies try to better align incentives with openness and collaboration. The more knowledge you share and the more you help grow the ecosystem around your project, the more value you can ultimately capture. While some degree of gatekeeping is necessary to protect community culture, the unproductive information asymmetry and cronyism produced by direct value capture systems are less financially incentivized in diffuse models.
+More diffuse value capture strategies try to better align incentives with openness and collaboration. The more knowledge you share and the more you help grow the ecosystem around your project, the more value you can ultimately capture. While some degree of gatekeeping is necessary to protect community culture, the unproductive information asymmetry and cronyism produced by more direct value capture systems are less financially incentivized in more diffuse models.
 
-With diffuse value capture the hacker ethic becomes fully aligned with financial incentives and competition at the highest levels of the market—where previously, it stood in tension with direct value capture.
+With more diffuse value capture the hacker ethic becomes fully aligned with financial incentives and competition at the highest levels of the market—where previously, it stood in tension with more direct value capture.
 
-The coordination mechanisms required to compete with companies like Apple and Nvidia as fully open-source organizations remain elusive. Still, the dream of "the year of the Linux desktop" refuses to die, and projects like Blender have managed to thrive—and nearly dominate their niche—despite chronic underfunding.
-
-One notable exception is crypto. Open-source and diffuse by nature, it has created and captured a staggering amount of value. Yet it remains controversial and underutilized in many free and open-source software circles.
-
-| Rank | Asset | Market Cap | Type |
-|------|-------|---------------------------|------|
-| 1 | Gold | 21.7T | Physical Commodity |
-| 2 | Microsoft | 3.3T | Technology |
-| 3 | Apple | 3.1T | Technology |
-| 4 | NVIDIA | 3.0T | Technology |
-| 5 | Amazon | 2.2T | Technology |
-| 6 | Bitcoin | 2.0T | Open-Source Commodity |
-| 7 | Google | 1.9T | Technology |
-
-It's notable that Google—the company behind the "Attention Is All You Need" paper that helped ignite the current AI hype cycle—now has a market cap smaller than a decentralized, open-source project with an anonymous founder. This market signal suggests something interesting about how value flows in an increasingly digital economy. While traditional tech companies navigate the challenges of direct value capture, cryptocurrencies are, surprisingly, defying many of the failure modes typically associated with open and decentralized projects. What's going on here?
+Partly open-source efforts like Google Fonts tend to ride inside larger proprietary companies. Further toward the diffuse end, no organization has yet matched Apple or Nvidia on coordination or capital formation. Crypto is the exception. Oriented toward the diffuse end from day one, it has produced market-scale value on its own terms—at one point in 2025, Bitcoin's market cap briefly surpassed Google's. A decentralized protocol with an anonymous founder had outpaced the company whose "Attention Is All You Need" paper ignited the current AI cycle. What's going on here?
 
 ## 6 Crypto & Diffuse Value Capture
 
@@ -190,53 +162,19 @@ It's notable that Google—the company behind the "Attention Is All You Need" pa
 <p>—Michael Saylor</p>
 </div>
 
-Technology should be deflationary—every efficiency and automation ought to push prices down in a competitive free market. Yet almost all goods and services feel noticeably more expensive each year. Why is that?
+Technology should be deflationary: every efficiency and automation ought to push prices down in competitive markets. Yet goods and services feel more expensive every year. The US broad money supply (M2) grew roughly 40% between 2020 and 2025, masking the price reductions technology and automation would otherwise deliver. A fixed-supply asset like Bitcoin offers a bureaucracy-free way to capture value from technological progress.
 
-In the United States, the broad money supply (M2) grew by roughly 40% between early 2020 and early 2025, masking the natural price reductions that technology and automation would otherwise deliver. To preserve purchasing power, simply saving in a hard-money asset—one with a fixed supply—like gold or Bitcoin offers a bureaucracy-free way to diffusely capture value from technological progress.
+The traditional equity market has its own gatekeeping problem. The best early-stage opportunities—private equity, venture capital, and pre-IPO startups—are inaccessible to most people. To participate you must be an accredited investor, meet income or net worth thresholds, and afford high minimum tickets. The public market often serves as a way for private equity to sell to retail after the returns have already been captured by insiders.
 
-Gold’s main weakness as money is that it only solves scarcity—not speed or security in a digital world. It’s heavy to ship, difficult to divide finely, and costly to verify. As a result, people store it in banks and transact using paper or electronic claims instead. But that custody layer reintroduces the very counterparty risk, government control, and inflation-by-decree (via unbacked IOUs) that gold was meant to eliminate—while still exposing holders to confiscation and inflation via mining. A purely digital, finite asset like Bitcoin avoids all of these problems.
+Today the average American cannot invest in leading AI companies like OpenAI or Anthropic. Retail investors seeking AI exposure are pushed into proxies like NVIDIA—but NVIDIA is a bet on its proprietary, more direct value capture strategy, not on AI itself, which has the potential to disrupt stable value capture moats like NVIDIA's own. Lottery tickets and casino gambling are permitted; early-stage startup equity is not, supposedly for the public's own good. The traditional financial system is too closed, proprietary, and gatekept to enable more diffuse value capture at the scale AI demands.
 
-<Image
-  src={Gold}
-  alt="Gold"
-  width={1200}
-  height={675}
-  class="rounded-md"
-/>
+Global capitalism now requires open, fair, permissionless, and 24/7 financial infrastructure.
 
-Like gold, Bitcoin has many advantages over real estate. Houses are non-fungible, non-transportable, non-divisible, and not instantly liquid. Ownership is taxed, maintenance is an ongoing cost, and there's always the risk of natural disasters or other catastrophes.
+After Bitcoin's success, many new blockchains emerged featuring smart contracts and decentralized applications—with the potential to replace the traditional financial system the way open-source software replaced proprietary software on the server side in the 1990s. These systems are open and diffuse by design—like computers and neural networks before them. The diffuse-to-direct orientation of the upstream infrastructure has downstream effects on how the technology gets used, which makes programmable blockchains like Ethereum conducive to more diffuse value capture.
 
-When single-family homes become a store of value, a monetary premium gets added on top of their use value as shelter. People end up paying more than necessary just to secure basic housing. This dynamic harms diffuse value capture in a crucial way: affordable housing frees people to pursue less directly profitable activities—maintaining independent open-source software, inventing new technologies without restrictive IP, or creating experimental art.
+If Bitcoin is digital gold, Ethereum functions more like a public world computer. Anyone can deploy a programmable token (an ERC-20 smart contract) that is immediately tradable on permissionless exchanges. Holders can pool two tokens in an automated market-maker like Uniswap, set or accept a swap fee, and earn a share for supplying liquidity—no bank or broker in the loop. The yield banks normally pocket on deposits flows straight back to participants.
 
-We've seen this cycle in cultural hubs like New York City and Berlin. Low-cost living initially enabled vibrant scenes of art, music, and experimental technology. These diffuse activities made the cities desirable, creating a positive feedback loop—until rising housing costs pushed out the very creators who made those places attractive, replacing diffuse innovation with direct value extraction.
-
-Many real estate investors are simply wealthy individuals seeking capital preservation. But if Bitcoin and other cryptocurrencies offer better long-term stores of value than real estate, shifting capital from housing to crypto could serve a dual purpose: preserving wealth while removing monetary premium from housing. This would be a boon for both diffuse value capture and housing affordability—a major quality-of-life issue for millions.
-
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">&quot;I&#39;m going to list this median house for 3x what the median family can afford.&quot; <a href="https://t.co/TCW9XeV8Q2">pic.twitter.com/TCW9XeV8Q2</a></p>&mdash; Darth Powell (@VladTheInflator) <a href="https://twitter.com/VladTheInflator/status/1912284080978423927?ref_src=twsrc%5Etfw">April 15, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-A slightly more advanced form of diffuse value capture than gold or real estate is the use of S&P 500 ETFs and the Boglehead investing strategy. These approaches allow individuals to capture value from the economy as a whole with minimal bureaucracy and few middlemen. Whatever value you create but fail to capture directly may be absorbed by companies like Google or Microsoft—and broad market exposure lets you reclaim a portion of it.
-
-However, the S&P 500 faces a similar issue to real estate: it's increasingly used as a store of value and an inflation hedge, rather than the original purpose of equities—investing in innovative companies. As a result, equities can accrue a monetary premium beyond their speculative value, artificially inflating prices and distorting the market. This dynamic can make market data less meaningful and extend the lifespans of companies that have ceased to innovate, preserving stagnant bureaucracies long past their prime.
-
-Is Apple in 2025—long after the era of Steve Jobs—still a strong speculative investment worthy of a $3.1 trillion market cap? How much of Apple’s valuation reflects genuine belief in its capacity to innovate, and how much is simply driven by ETFs parked in retirement accounts?
-
-What if the stock market could refocus on its original purpose—funding innovation—rather than increasingly functioning as a store of value dominated by established incumbents?
-
-The equity market presents numerous challenges to diffuse value capture. Many of the best investment opportunities—such as private equity and venture capital—are inaccessible to the average person. These markets are heavily gatekept: to participate, you must be an accredited investor, meet minimum income or net worth requirements, and afford high minimum investment thresholds. In practice, the public market often serves as a way for private equity to sell to the public after most of the returns have already been captured by wealthy insiders.
-
-Even today, the average American can’t invest in most leading AI companies like OpenAI or Anthropic. Retail investors seeking AI exposure are pushed into proxies like NVIDIA—but buying NVIDIA stock is essentially a bet on its proprietary, direct value capture strategy, not on AI itself, which has the potential to unlock technologies capable of disrupting previously stable value capture moats like NVIDIA’s.
-
-In the U.S., individuals are allowed to buy lottery tickets and gamble at casinos, yet are "protected" from accessing early-stage startup equity—supposedly for their own good. The traditional financial system is simply too closed, proprietary, and gatekept to enable diffuse value capture at the scale demanded by AI and other emerging technologies.
-
-To me, it’s clear that global capitalism now requires open, fair, permissionless, and 24/7 financial infrastructure.
-
-After Bitcoin’s success, many new blockchains emerged, featuring smart contracts and decentralized applications with the potential to replace the traditional financial system with open-source infrastructure—much like open-source software replaced proprietary software in the server-side battle in the 1990s.
-
-These systems are open and diffuse by design. Just as computers are inherently aligned with free information and effortless copying, and neural networks are diffuse by nature. The diffuse-to-direct orientation of the upstream infrastructure often has downstream effects on how the technology is used, making programable blockchains like Ethereum more condusive to diffuse value capture.
-
-If Bitcoin is digital gold, then Ethereum functions more like a public world computer. Ethereum lets anyone deploy a programmable token (an ERC-20 smart contract) that is immediately tradable on open, permissionless exchanges. Holders can pool two tokens in an automated market-maker like Uniswap, set (or accept) a swap fee, and earn a share of that fee for supplying liquidity—no bank or broker in the loop. The yield that banks normally pocket on deposits flows straight back to participants, a textbook case of diffuse value capture.
-
-While finance is Ethereum’s most developed use case, its potential extends far beyond. As a general-purpose platform, Ethereum is also a fertile ground for cultural experimentation. One of the highest-market-cap tokens on the Ethereum blockchain isn’t tied to finance at all, but to internet culture: 0x6982508145454ce325ddbe47a25d4ec3d2311933, $PEPE.
+While finance is Ethereum's most developed use case, its potential extends further. As a general-purpose platform, Ethereum is also fertile ground for cultural experimentation. One of the highest-market-cap tokens on Ethereum isn't tied to finance at all but to internet culture: 0x6982508145454ce325ddbe47a25d4ec3d2311933, \$PEPE.
 
 <Image
   src={Pepe}
@@ -246,65 +184,41 @@ While finance is Ethereum’s most developed use case, its potential extends far
   class="rounded-md"
 />
 
-Pepe the Frog is a prime example of the shift from direct to diffuse culture. The character was created by Matt Furie in 2005 as part of his comic Boy’s Club. Pepe’s origin followed the traditional model of direct culture: a single creator and copyright holder with full control over the character and its world.
+Pepe the Frog is a textbook example of the shift from direct to diffuse culture. Matt Furie created the character in 2005 as part of his comic Boy's Club—originally a classic direct-culture setup, a single creator with full copyright control over the character and its world.
 
-However, it’s worth noting that Matt Furie’s art style is a psychedelic blend of the media consumed by Gen X and Elder Millennials growing up in the 1980s that often dosn't try very hard to disgues it's influences. His work evokes distorted echoes of pop culture icons—Jim Henson’s Muppets, Ronald McDonald, Skeletor, Freddy Krueger, the Ninja Turtles, or Falkor from the Never Ending Story—all diffused through Furie’s own surreal lens. In this way, he represents an interesting checkpoint in the transition from direct to diffuse culture.
+Furie's own art style is a psychedelic blend of 1980s Gen X media: Jim Henson's Muppets, Ronald McDonald, Skeletor, Freddy Krueger, the Ninja Turtles, Falkor from The NeverEnding Story—distorted through his own surreal lens. He doesn't try very hard to disguise his influences. Furie represents an interesting checkpoint in the transition from direct to diffuse culture.
 
-This highlights a core tension in direct value capture systems: at some level, everything is a remix. Yet direct value capture requires a certain level of abstraction away from source material to meet legal and social requirements for originality—asserting authorship and ownership over what is, in practice, always partially derived.
+This highlights a core tension in more direct value capture systems: at some level, everything is a remix. Yet more direct value capture requires a certain level of abstraction away from source material to meet legal and social requirements for originality—asserting authorship over what is, in practice, always partially derived.
 
-The Pepe the Frog character became an internet meme as his popularity steadily grew across platforms like Myspace, 4chan, and Tumblr starting in 2008. By 2015, he had become one of the most widely recognized memes on the internet. Pepe began evolving in a decentralized, memetic fashion—without a central authority and entirely outside the intent of his original creator.
+Pepe became an internet meme as the character spread across Myspace, 4chan, and Tumblr starting in 2008. By 2015 it was one of the most widely recognized memes on the internet, evolving in a decentralized, memetic fashion—without a central authority and entirely outside the intent of its original creator.
 
-This culminated in Pepe becoming accociated with and widly used by various extreamist political groups, prompting Matt Furie to use his copyright in an attempt to stop the character’s use. While Furie achieved some legal successes, the character ultimately had completly escaped his control. Pepe took on drawing styles and lore with no single author, he just continued evolving online, even morphing into versions so different from the original that they took on other names and identities.
+This eventually included Pepe's adoption by extremist political groups, prompting Furie to try to use his copyright to stop the character's use. There were some legal successes, but the character had completely escaped his control. Pepe took on drawing styles and lore with no single author, morphing into versions so different from the original that they took on other names and identities.
 
-The nature of the internet made containment impossible. In an interview with Esquire, Furie said of Pepe’s use as a hate symbol: “It sucks, but I can't control it more than anyone can control frogs on the internet.”
+The internet made containment impossible. In an interview with Esquire, Furie said of Pepe's use as a hate symbol: "It sucks, but I can't control it more than anyone can control frogs on the internet."
 
-In late April 2023, during a crypto bear market following the collapse of FTX, a PEPE memecoin was launched on Ethereum and quickly reached a market cap of 1.6 billion by early May. Today it has a market cap of 5.5 billion—down significantly from its all-time high of 11 billion in late 2024.
+In late April 2023, during a crypto bear market following the collapse of FTX, a PEPE memecoin was launched on Ethereum. It reached a market cap of \$1.6 billion by early May and peaked at \$11 billion in late 2024, remaining in multi-billion-dollar territory.
 
-<Image
-  src={PepeChart}
-  alt="Pepe-Chart"
-  width={1200}
-  height={640}
-  class="rounded-md"
-/>
+The memecoin worked as a minimum-viable coordination and incentive mechanism layered on top of a diffuse cultural phenomenon. Anyone holding the token could create content for it without permission, and if the content got enough attention the token went up—a basic attention market, and an incentive structure for propagating the meme.
 
-I was closely following the token at the time, and what I saw was a glimpse of crypto’s potential as a diffuse value capture system. The memecoin functioned as a minimal viable coordination and incentive mechanism layered on top of a diffuse cultural phenomenon.
+Crypto has a concept called "working for your bags." Traditional wage labor spends a massive amount of time just trying to get the next job. In crypto, you can buy an asset you think is undervalued without permission and immediately go to work inside the open community around it—making memes and content on social media, or at a more serious level, buying a token for some open-source technology or protocol and contributing on GitHub while talking about it online.
 
-Anyone holding the token could create content for it without permission, and if the content got enough attention, the token would go up in value, like a basic attention market. It created an incentive structure for propogating the meme.
+This already happens with equities in coarse form: people who own a lot of Apple stock tend to own Apple products, and are incentivized to promote them and ignore their flaws. Crypto allows this to happen at much finer grain.
 
-Crypto has a concept of "working for your bags". In tradional wage labor a massive amount of time is spent simply trying to get the next job. But in crypto, you can buy an assets you think is undervalued without permission, and imediatly get to work in the open community around it.
-
-This can be as simple as making memes and content on a site like Twitter/X, or can look more like a real job, such as buying a crypto token for some open-source technology or protocol and working to improve it on GitHub and talking about it on social media.
-
-This is already something that happens with equities, people that own a lot of Apple stock tend to own Apple computers, and they are incentavized to promote them and ignore their flaws due to finacial intrest. Crypto allows this to happen in a much more fine grained way.
-
-In the early days of PEPE, almost every night there were long Twitter spaces full of 1000s of people talking about PEPE. The energy was electric, hosts would sometimes just play Jungle music and everyone would spam green hearts.  This was of couse all very juvinile and silly, but most interesting technology looks like that at first.
-
-Blockchains currently have a lots of problems that prevent mainstream adoption, but think a likly future is that almost all Linux distros and open source software projects will have crypto assets accociated with them. This will create valuable real time 24/7 market data for the global open-source ecosystem.
+Blockchains have a lot of problems preventing mainstream adoption, but a likely future is that many open-source software projects will have associated tradable assets, creating real-time 24/7 market data for the global open-source ecosystem.
 
 ## 7 Post-Authorship
 
-The obsession with authorship and originality that results from an over-reliance on direct value capture has become a weight dragging down creativity, collaboration, production incentives, and mental health.
+The obsession with authorship and originality that results from an over-reliance on more direct value capture has become a weight dragging down creativity, collaboration, and production incentives. The path to success becomes isolating, owning, controlling, and defending infinitely copyable intangible ideas—at odds with how culture and technology actually evolve, and actively suppressing the social and memetic nature of cultural production.
 
-We’ve built a world where the path to success is to isolate, own, control, and defend infinitly copyable intangible ideas. This is not only at odds with how culture and technology actually evolve—it actively suppresses the social and memetic nature of cultural production.
+Design social media shows the pattern at work. Scroll long enough and you'll see an endless parade of designers complaining that someone stole their work—recently over things as trivial and obviously un-ownable as color gradients. Meanwhile the quality of design in the everyday world degrades: the pressures of more direct value capture push designers toward performing as expressive auteurs rather than building durable visual systems. What our environment gets in return is expressive slop where functional, authorless late-modernism used to be.
 
-Pay attention to design related social media and you will see an endless parade of people complainging about other people stealing their work, recently over things as trivial and obviously un-ownable as color gradiants. At the same time the quality of design in the everyday world degrades beacuse the presurses of direct value capture push designers to become expressive artist autures instead of visual systems engineers. So our visual environment degrades into expressive slop replaceing the dignaty and beauty of functional authorless late modernism.
+Case in point, from late 2023: a widely-praised "Satie graphic" turned out on inspection to be little more than the font Ogg Regular with one character swapped to italic and a bit of tracking.
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">The Satie graphic is just the font Ogg Regular with the i changed to Ogg Regular Italic, plus a little bit of tracking...<a href="https://t.co/XtOXnRN6jE">https://t.co/XtOXnRN6jE</a> <a href="https://t.co/i59g2tbP5P">https://t.co/i59g2tbP5P</a></p>&mdash; Eli Heuer (@eliheuer) <a href="https://twitter.com/eliheuer/status/1730361630096306652?ref_src=twsrc%5Etfw">November 30, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-The increased importance of identity politics, specifically in universities and professional-managerial class circles between the 2010s and 2020s has exacerbated the tendency of direct value capture systems to over focus on identity and authorship.
+In August 2021, the NFT profile-picture project Milady launched on Ethereum, designed to be diffuse from the start. It was licensed under the VPL, a simple copyleft license that allows derivative works without permission but requires them to be released under the same terms. The project invited an ARG-like game where anyone could make and sell derivative NFT collections. The PFP became a kind of license to have fun online, freeing wearers from the stifling pressures of identity and authorship. The community encouraged stealing tweets and wearing NFTs you didn't own. Where Pepe foreshadowed the loss of authorial control, Milady formalized it as a design principle.
 
-<Image
-  src={Identity}
-  alt="Identity"
-  width={1536}
-  height={1024}
-  class="rounded-md"
-/>
-
-In August 2021, the NFT PFP Milady was launched on Ethereum. This was a project that was designed to be diffuse from the start, licened under the VPL, a simple copyleft license that allows anyone to make a derivative work without permission, but also requires that derivative works be licensed under the same terms. The project invited a kind of ARG-like game where anyone can make and sell derivative NFT collections, and the PFP became a kind of license to have fun online that freed wearers from the stifling preasures of identity and authorship. The comunity encourged stealing tweets and wearing NFTs you didn't own. Where Pepe foreshadowed the loss of authorial control, Milady formalized it as a design principle.
-
-One of the key people behind the project was Charlotte Fang, who wrote many blog posts and tweeted art critisism at the time. He wrote a blogpost called "Unpacking Post-Authorship" in 2022 which formailized the idea of post-authorship as a new way of thinking about art and design after blockchain and AI. It offered an alternative to the increasigly stifling identity and authorship culture of millenial profesionals and legacy art and design institutions:
+One of the key people behind the project was Charlotte Fang, who wrote extensively about art criticism at the time. In 2022 he published "Unpacking Post-Authorship," which formalized the idea as a way of thinking about art and design after blockchain and AI—an alternative to the increasingly stifling identity and authorship culture of legacy art and design institutions:
 
 <div class="pl-6 my-8 [&>*]:text-muted-foreground">
 <p>1. Remixing is the natural mode of artmaking online; introducing any friction to process materials damages the sum art output of the community,</p>
@@ -313,13 +227,10 @@ One of the key people behind the project was Charlotte Fang, who wrote many blog
 
 <p>3. Art comes from the beyond & not in isolation; as the artist serves only as handmaiden to higher consciousnesses, it's hubris to be entitled to its bounties especially at the expense of its memetic fitness.</p>
 
-<p>Accepting the death of authorship recognizes and rejects the social mores that hamper an ability to freely use, modify and propagate artist's work. However, it should be clear it's not necessarily a radical commitment to anti-authorship in all instances. It is true that artists imprint their personal interpretation of the divinity they channel (secular: zeitgeist, collective unconsciousness, so accreditation, especially in the context of canonization, is very often relevant, e.g. to trace a chronology of work to best understand it in reflection with an on-going practice.</p>
-
 <p>—Charlotte Fang, Unpacking Post-Authorship, 2022.</p>
-
 </div>
 
-While the authorhip and indentity obsesed art and design world faught over scraps thown to them by legacy institutions, and endured low-pay, unpaid internships, and other forms of degradation, the Milady community was making money and having fun online. The all-time high floor price for Milady NFTs was 7.8 ETH ($20,000 USD at the time), which occurred around May 10-11, 2023, following a tweet by Elon Musk featuring a Milady. Unauthorized derivative works were being made and sold by the thousands. Many of the collections featured AI generated images. At one point Vitalik Buterin even wore a Milady NFT as his Twitter/X profile picture.
+The Milady community made money and had fun online while the broader art and design world fought over scraps from legacy institutions. The all-time high floor price for Milady NFTs was 7.8 ETH (\$20,000 USD at the time) around May 10–11, 2023, following a tweet by Elon Musk featuring a Milady. Unauthorized derivative works were made and sold by the thousands, many featuring AI-generated images. At one point Vitalik Buterin wore a Milady NFT as his Twitter/X profile picture.
 
 <Image
   src={Vitalik}
@@ -329,21 +240,15 @@ While the authorhip and indentity obsesed art and design world faught over scrap
   class="rounded-md"
 />
 
-The GPL was never intended as anti-commercial—Richard Stallman explicitly designed it to enable business models built on free software. Companies could sell support, customization, hosting, or integration services while the code itself remained free. Red Hat proved this model could work, building a multi-billion dollar business on open-source software.
+The GPL was never intended as anti-commercial—Stallman explicitly designed it to enable business models built on free software. Companies could sell support, customization, hosting, or integration services while the code itself remained free. Red Hat proved this model could work, building a multi-billion-dollar business on open-source software.
 
-But these traditional open-source business models still rely on somewhat direct value capture—selling services to specific customers through conventional contracts. They're missing what might be the final piece of the GPL/copyleft vision: a native, diffuse economic layer that aligns with the license's viral, collaborative nature. Just as Linus Torvalds provided the missing kernel that made GNU tools a complete usable operating system, crypto markets, with much of their base level protocols and culture being copyleft oriented, might provide the missing economic infrastructure that makes copyleft a complete economic system.
+But these traditional open-source business models still rely on somewhat more direct value capture—selling services to specific customers through conventional contracts. They're missing what might be the final piece of the GPL/copyleft vision: a native, diffuse economic layer that aligns with the license's viral, collaborative nature. Just as Linus Torvalds provided the missing kernel that made GNU tools a complete operating system, crypto markets—with base-level protocols and culture that are largely copyleft-oriented—might provide the missing economic infrastructure that makes copyleft a complete economic system.
 
-Imagine if every GPL project had an associated token that automatically appreciated with adoption and improvement. Contributors would be incentivized to enhance the commons rather than fork it for proprietary advantage. Users could invest in the tools they depend on. The same viral property that makes GPL code spread could make economic value flow back to creators—diffusely, automatically, without gatekeepers.
+Imagine if every GPL project had an associated token that appreciated with adoption and improvement. Contributors would be incentivized to enhance the commons rather than fork it for proprietary advantage. Users could invest in the tools they depend on. The same viral property that makes GPL code spread could make economic value flow back to creators—diffusely, automatically, without gatekeepers.
 
-This isn't a rejection of the GPL's principles but their fulfillment. When Stallman wrote about reducing "bureaucracy and isometric struggles against competition," he was describing inefficiencies that blockchain-based coordination could actually solve. The infrastructure for this future already exists. What's missing is cultural acceptance—the willingness to see crypto not as unserious speculation but as the economic layer copyleft licensed projects always needed.
+Many programmers and designers are financially incentivized to work in proprietary models on large projects they have little authorship over. Can permissionless open-source projects recreate those incentives natively?
 
-Many programmers and designer are financially incentivised to work in proprietary models on large projects they have little authorship over. What if we could partially recreate those incentives in permissionless independent open-source projects?
-
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Their design assumes memes = an individual viral post, eg a specific funny tik tok, rather than call &amp; response remixed cultural virus, eg an evolving tik tok fad. Incredible millennial brainrot. They accidentally built a very poor, ultra thin prediction market on post engagement</p>&mdash; ♡ Charlotte Fang 🪲 Crown Prince ❀ LOVE HEALS 💞 (@CharlotteFang77) <a href="https://twitter.com/CharlotteFang77/status/1913635465921700010?ref_src=twsrc%5Etfw">April 19, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-I belive there is a lot of potential in using crypto incentives with post-authorship ethos to create learge-scale ambitious open-source projects that were previously impossible.
-
-## 8 Incentivizing Post-Authorship Commons-Based Peer Production.
+## 8 Post-Authorship Peer Production
 
 <div class="pl-6 my-8 [&>*]:text-muted-foreground">
 <p>“There is no reason to believe that bureaucrats and politicians, no matter how well meaning, are better at solving problems than the people on the spot, who have the strongest incentive to get the solution right.”</p>
@@ -357,13 +262,13 @@ I belive there is a lot of potential in using crypto incentives with post-author
 <p>—Vitalik Buterin</p>
 </div>
 
-Commons-based peer production, a term Yochai Benkler introduced in 2002, describes large, networked collaborative projects like GNU/Linux, Ethereum, Wikipedia, and SETI@home. These projects have less rigid hierarchies than traditional businesses, but Benkler's core insight is that commons-based production doesn't propagate proprietary knowledge. Everything created remains equally available for anyone to use, remix, and extend.
+TikTok is a useful middle-of-the-spectrum example. ByteDance owns the platform and a proprietary algorithm decides which videos propagate, but the creation layer is diffuse: a format emerges, thousands of creators remix it, the best versions spread, the rest fade. The same coordination shape shows up in GitHub, Hugging Face, and Linux at different points further toward the diffuse end—many contributors, flatter hierarchies, and output that stays available for anyone to use, remix, and extend. Call it post-authorship peer production.
 
-Post-authorship removes many barriers to collaboration and coordination that I believe have held back commons-based peer production, specifically the more cultural areas like art and design. When contributors stop worrying about who owns what idea, energy shifts from defending territory to building together, unlocking long-tail innovation.
+Post-authorship removes many of the barriers to collaboration that have held back peer production, especially in cultural areas like art and design. When contributors stop worrying about who owns what idea, energy shifts from defending territory to building together, unlocking long-tail innovation.
 
-Once the first copy of a program, video, or AI model exists, duplicating it costs almost nothing. Competitive pressures, piracy, and open-source alternatives drive prices towards the marginal cost of production, making the long-run price of digital goods effectively free. In this environment, diffuse value capture often outperforms direct approaches like paywalls, DRM, and legally enforced artificial scarcity. Incentives aren't abolished but rewired.
+Once the first copy of a program, video, or AI model exists, duplicating it costs almost nothing. Competitive pressures, piracy, and open-source alternatives push prices toward the marginal cost of production, which for digital goods is near zero. In this environment, diffuse value capture often outperforms direct approaches like paywalls, DRM, and legally enforced artificial scarcity. Incentives aren't abolished but rewired.
 
-The printing press took two and a half centuries to produce modern copyright. Blockchains and AI may need only decades to retire it. The rails for diffuse value capture are already in place, cultural norms just need time to catch up.
+The printing press took more than two centuries to produce modern copyright. Blockchains and AI may need only decades to retire it. The rails for diffuse value capture are already in place; cultural norms just need time to catch up.
 
 ## Colophon
 
