@@ -103,6 +103,7 @@
       display: block;
       width: 100%;
       overflow-x: auto;
+      font-size: 0.85em;
     }
 
     thead {
@@ -129,6 +130,10 @@
       vertical-align: top;
       word-break: break-word;
       text-align: left;
+    }
+
+    td:first-child, th:first-child {
+      white-space: nowrap;
     }
 
     img, video, figure, .expressive-code {
