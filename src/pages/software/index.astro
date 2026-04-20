@@ -1,25 +1,12 @@
 ---
-import BlogCard from '@/components/BlogCard.astro'
 import PageHead from '@/components/PageHead.astro'
 import Layout from '@/layouts/Layout.astro'
-import { getCollection } from 'astro:content'
-
-const software = await getCollection('software', ({ data }) => !data.draft)
-software.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
 ---
 
 <Layout>
   <PageHead slot="head" title="Software" />
 
-  <section class="flex flex-col gap-y-4">
-    <ul class="flex flex-col gap-[36px]">
-      {
-        software.map((project) => (
-          <li>
-            <BlogCard entry={project} />
-          </li>
-        ))
-      }
-    </ul>
+  <section>
+    <p class="text-foreground">Coming soon.</p>
   </section>
 </Layout>
