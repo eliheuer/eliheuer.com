@@ -27,7 +27,7 @@ const shortDate = (date: Date) =>
         >
           {shortDate(post.data.date)}
         </time>
-        <Link href={`/blog/${post.id}`} class="hover:underline">
+        <Link href={`/blog/${post.id}`} class="hover:underline font-normal">
           {post.data.title}
         </Link>
       </li>
