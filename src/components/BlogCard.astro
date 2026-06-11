@@ -1,43 +1,26 @@
 ---
 import { formatDate } from '@/lib/utils'
-import { Image } from 'astro:assets'
 import type { CollectionEntry } from 'astro:content'
 import Link from './Link.astro'
 
 interface Props {
-  entry: CollectionEntry<'blog'> | CollectionEntry<'fonts'> | CollectionEntry<'software'>
+  entry:
+    | CollectionEntry<'blog'>
+    | CollectionEntry<'fonts'>
+    | CollectionEntry<'software'>
 }
 
 const { entry } = Astro.props
-const formattedDate = formatDate(entry.data.date)
 ---
 
-{/* card padding: 1 unit (18px). gap between image and text: 1 unit. */}
-<div class="border-[1.5px] border-white/25 p-[36px] transition-colors duration-300 ease-in-out hover:bg-secondary/50">
-  <Link href={`/${entry.collection}/${entry.id}`} class="grid grid-cols-1 md:grid-cols-2 gap-[36px] md:items-stretch">
-    {
-      entry.data.image && (
-        <div>
-          <Image
-            src={entry.data.image}
-            alt={entry.data.title}
-            width={3072}
-            height={2048}
-            class="w-full h-full object-cover block"
-          />
-        </div>
-      )
-    }
-
-    <div class="flex flex-col justify-between">
-      <div>
-        {/* negative margin compensates for line-height space above cap height */}
-        <h3 style="font-size: 1.5em; line-height: 1.2; font-weight: 500;">{entry.data.title}</h3>
-        <br />
-        <p>{entry.data.description}</p>
-      </div>
-      {/* negative margin compensates for line-height space below baseline */}
-      <p style="line-height: 1; margin-bottom: -0.08em;">{formattedDate}</p>
-    </div>
+<div class="flex flex-col gap-x-4 sm:flex-row sm:items-baseline">
+  <time
+    datetime={entry.data.date.toISOString()}
+    class="text-muted-foreground shrink-0 tabular-nums sm:w-32"
+  >
+    {formatDate(entry.data.date)}
+  </time>
+  <Link href={`/${entry.collection}/${entry.id}`} class="hover:underline">
+    {entry.data.title}
   </Link>
 </div>

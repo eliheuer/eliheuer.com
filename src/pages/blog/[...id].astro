@@ -1,16 +1,9 @@
 ---
-import Breadcrumbs from '@/components/Breadcrumbs.astro'
 import Link from '@/components/Link.astro'
 import PostHead from '@/components/PostHead.astro'
-import TableOfContents from '@/components/TableOfContents.astro'
-import { badgeVariants } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { Separator } from '@/components/ui/separator'
 import Layout from '@/layouts/Layout.astro'
-import { getAdjacentPosts, getAllPosts, parseAuthors } from '@/lib/data-utils'
+import { getAdjacentPosts, getAllPosts } from '@/lib/data-utils'
 import { formatDate, readingTime } from '@/lib/utils'
-import { Icon } from 'astro-icon/components'
-import { Image } from 'astro:assets'
 import { render } from 'astro:content'
 
 export async function getStaticPaths() {
@@ -24,67 +17,47 @@ export async function getStaticPaths() {
 
 const post = Astro.props
 const currentPostId = Astro.params.id
-const { Content, headings } = await render(post)
+const { Content } = await render(post)
 const { next, prev } = await getAdjacentPosts(currentPostId)
-const authors = await parseAuthors(post.data.authors ?? [])
 ---
 
 <Layout>
   <PostHead slot="head" post={post} />
-  <div>
-    {
-      post.data.image && (
-        <Image
-          src={post.data.image}
-          alt={post.data.title}
-          width={3072}
-          height={2048}
-          class="w-full object-cover"
-        />
-      )
-    }
 
-    <h1 style="font-size: 72px; line-height: 1.1; font-weight: 500; margin-top: 72px; margin-bottom: 36px;">{post.data.title}</h1>
+  <article class="py-8">
+    <header class="mb-8">
+      <h1 class="text-3xl leading-tight font-semibold">{post.data.title}</h1>
+      <p class="text-muted-foreground mt-2">
+        <time datetime={post.data.date.toISOString()}>
+          {formatDate(post.data.date)}
+        </time>
+        &middot; {readingTime(post.body ?? '')}
+      </p>
+    </header>
 
-    <article class="prose max-w-[65ch]">
+    <div class="prose">
       <Content />
-    </article>
-  </div>
+    </div>
+  </article>
 
-  <Button
-    variant="outline"
-    size="icon"
-    className="group fixed right-8 bottom-8 z-50 hidden"
-    id="scroll-to-top"
-    title="Scroll to top"
-    aria-label="Scroll to top"
-  >
-    <Icon
-      name="lucide:arrow-up"
-      class="mx-auto size-4 transition-all group-hover:-translate-y-0.5"
-    />
-  </Button>
-
-  <script>
-    document.addEventListener('astro:page-load', () => {
-      const scrollToTopButton = document.getElementById('scroll-to-top')
-      const footer = document.querySelector('footer')
-
-      if (scrollToTopButton && footer) {
-        scrollToTopButton.addEventListener('click', () => {
-          window.scrollTo({ top: 0, behavior: 'smooth' })
-        })
-
-        window.addEventListener('scroll', () => {
-          const footerRect = footer.getBoundingClientRect()
-          const isFooterVisible = footerRect.top <= window.innerHeight
-
-          scrollToTopButton.classList.toggle(
-            'hidden',
-            window.scrollY <= 300 || isFooterVisible,
-          )
-        })
-      }
-    })
-  </script>
+  {
+    (prev || next) && (
+      <nav class="border-border text-muted-foreground flex justify-between gap-x-6 border-t py-6">
+        <span>
+          {prev && (
+            <Link href={`/blog/${prev.id}`} class="hover:text-foreground">
+              &larr; {prev.data.title}
+            </Link>
+          )}
+        </span>
+        <span class="text-right">
+          {next && (
+            <Link href={`/blog/${next.id}`} class="hover:text-foreground">
+              {next.data.title} &rarr;
+            </Link>
+          )}
+        </span>
+      </nav>
+    )
+  }
 </Layout>

@@ -1,6 +1,6 @@
 ---
-import BlogCard from '@/components/BlogCard.astro'
 import PageHead from '@/components/PageHead.astro'
+import PostList from '@/components/PostList.astro'
 import Layout from '@/layouts/Layout.astro'
 import { getAllPosts } from '@/lib/data-utils'
 
@@ -10,16 +10,8 @@ const allPosts = await getAllPosts()
 <Layout>
   <PageHead slot="head" title="Blog" />
 
-  <section class="flex flex-col gap-y-4">
-    <!-- gap between cards: 1 unit -->
-    <ul class="flex flex-col gap-[36px]">
-      {
-        allPosts.map((post) => (
-          <li>
-            <BlogCard entry={post} />
-          </li>
-        ))
-      }
-    </ul>
+  <section class="py-8">
+    <h1 class="mb-4 text-xl font-semibold">Posts</h1>
+    <PostList posts={allPosts} />
   </section>
 </Layout>

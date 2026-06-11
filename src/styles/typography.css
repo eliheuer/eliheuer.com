@@ -1,16 +1,15 @@
 @reference './global.css';
 
-/* ── Design system: 24px / 36px baseline grid ──────────────── */
-/* Grid unit: 36px. Half unit: 18px.                            */
-/* All spacing is a multiple of 36px unless noted.              */
-/* Headings: same size as body, uppercase, letterspaced, 500.   */
+/* ── Design system: plain engineering-blog prose ───────────── */
+/* 17px body, ~1.6 line height, em-relative spacing, a clear    */
+/* heading hierarchy. Optimized for legibility at text sizes.   */
 
 @layer components {
   .prose {
     color: var(--foreground);
 
     p {
-      margin: 36px 0; /* 1 unit */
+      margin: 1.2em 0;
     }
 
     p:first-child {
@@ -23,13 +22,17 @@
 
     h1, h2, h3, h4, h5, h6 {
       color: var(--foreground);
-      font-weight: 500;
-      font-size: 1.5em; /* 36px — 1.5x body */
-      line-height: 1.2;
-      margin-top: 72px; /* 2 units */
-      margin-bottom: 18px; /* half unit */
-      scroll-margin-top: 5rem;
+      font-weight: 600;
+      line-height: 1.25;
+      margin-top: 2em;
+      margin-bottom: 0.6em;
+      scroll-margin-top: 2rem;
     }
+
+    h1 { font-size: 1.7em; }
+    h2 { font-size: 1.4em; }
+    h3 { font-size: 1.2em; }
+    h4, h5, h6 { font-size: 1em; }
 
     a {
       color: var(--foreground);
@@ -47,24 +50,25 @@
 
     strong {
       color: var(--foreground);
-      font-weight: 500;
+      font-weight: 600;
     }
 
     ul {
-      margin: 36px 0; /* 1 unit */
-      margin-left: 2rem;
+      margin: 1.2em 0;
+      margin-left: 1.5rem;
       list-style-type: disc;
     }
 
     ol {
-      margin: 36px 0; /* 1 unit */
-      margin-left: 2rem;
+      margin: 1.2em 0;
+      margin-left: 1.5rem;
       list-style-type: decimal;
     }
 
     li {
       color: var(--foreground);
-      padding-left: 0.5rem;
+      padding-left: 0.25rem;
+      margin: 0.35em 0;
     }
 
     li > p {
@@ -88,18 +92,19 @@
     }
 
     blockquote {
-      margin: 36px 0; /* 1 unit */
+      margin: 1.2em 0;
       border-left: 2px solid var(--border);
-      padding-left: 1.5rem;
+      padding-left: 1.25rem;
+      color: var(--muted-foreground);
     }
 
     hr {
-      margin: 72px 0; /* 2 units */
+      margin: 2.5em 0;
       border-top: 1px solid var(--border);
     }
 
     table {
-      margin: 36px 0; /* 1 unit */
+      margin: 1.2em 0;
       display: block;
       width: 100%;
       overflow-x: auto;
@@ -137,7 +142,7 @@
     }
 
     img, video, figure, .expressive-code {
-      margin: 36px 0; /* 1 unit */
+      margin: 1.4em 0;
     }
 
     kbd {

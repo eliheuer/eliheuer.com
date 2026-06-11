@@ -6,38 +6,32 @@ import Footer from '@/components/Footer.astro'
 import Head from '@/components/Head.astro'
 import Header from '@/components/Header.astro'
 import { SITE } from '@/consts'
-import { cn } from '@/lib/utils'
-
-const defaultFont = 'virtua'
 ---
 
 <!doctype html>
-<html lang={SITE.locale} class={defaultFont === 'virtua' ? 'use-virtua-font' : 'use-geist-font'}>
+<html lang={SITE.locale} class="use-virtua-font">
   <Head>
     <slot name="head" />
   </Head>
   <body>
-    <div class="flex h-fit min-h-screen flex-col font-sans">
+    <div class="mx-auto flex min-h-screen w-full max-w-[44rem] flex-col px-5 font-sans">
       <Header />
       <main class="grow">
-        <!-- px-[36px]: 1 grid unit (18px = half baseline) -->
-        <div class="mx-auto flex grow flex-col px-[36px] w-full">
-          <slot />
-        </div>
+        <slot />
       </main>
       <Footer />
     </div>
 
-    <script is:inline define:vars={{ defaultFont: 'virtua' }}>
-      (function() {
+    <script is:inline>
+      (function () {
         try {
-          const font = localStorage.getItem('font') || defaultFont;
+          const fonts = ['virtua', 'inter', 'helvetica', 'geist'];
+          let font = localStorage.getItem('font');
+          if (!fonts.includes(font)) font = 'virtua'; // incl. legacy 'bezy'
           const html = document.documentElement;
-          html.classList.remove('use-virtua-font', 'use-geist-font');
-          html.classList.add(font === 'geist' ? 'use-geist-font' : 'use-virtua-font');
-          if (!localStorage.getItem('font')) {
-            localStorage.setItem('font', defaultFont);
-          }
+          fonts.forEach((f) => html.classList.remove('use-' + f + '-font'));
+          html.classList.add('use-' + font + '-font');
+          localStorage.setItem('font', font);
         } catch (e) {
           document.documentElement.classList.add('use-virtua-font');
         }

@@ -1,0 +1,36 @@
+---
+import Link from '@/components/Link.astro'
+import type { CollectionEntry } from 'astro:content'
+
+interface Props {
+  posts: CollectionEntry<'blog'>[]
+}
+
+const { posts } = Astro.props
+
+const shortDate = (date: Date) =>
+  Intl.DateTimeFormat('en-US', {
+    day: '2-digit',
+    month: 'short',
+    year: 'numeric',
+    timeZone: 'UTC', // date-only frontmatter parses as UTC midnight
+  }).format(date)
+---
+
+<ul class="flex flex-col gap-y-2">
+  {
+    posts.map((post) => (
+      <li class="flex flex-col gap-x-4 sm:flex-row sm:items-baseline">
+        <time
+          datetime={post.data.date.toISOString()}
+          class="text-muted-foreground shrink-0 tabular-nums sm:w-28"
+        >
+          {shortDate(post.data.date)}
+        </time>
+        <Link href={`/blog/${post.id}`} class="hover:underline">
+          {post.data.title}
+        </Link>
+      </li>
+    ))
+  }
+</ul>

@@ -1,32 +1,41 @@
 ---
+import Link from '@/components/Link.astro'
 import PageHead from '@/components/PageHead.astro'
+import PostList from '@/components/PostList.astro'
 import Layout from '@/layouts/Layout.astro'
+import { getAllPosts } from '@/lib/data-utils'
+
+const allPosts = await getAllPosts()
 ---
 
 <Layout>
-  <PageHead slot="head" title="Index" />
+  <PageHead slot="head" title="Eli Heuer" />
 
-  <section>
-    <div class="grid grid-cols-1 md:grid-cols-2">
-      <div class="prose">
-        <p>
-        Eli is an AI and design engineer based in the US.
-        </p>
-        <p>
-        He's currently building <a href="https://github.com/eliheuer/runebender-xilem">Runebender Xilem</a>, a cross-platform open-source font editor written in Rust; Font.Garden, a solo startup applying generative AI to vector graphics; and a collection of type design nodes for <a href="https://github.com/eliheuer/comfyfont">ComfyUI</a>.
-        </p>
-      </div>
+  <section class="py-8">
+    <p>
+      I'm an AI and design engineer based in the US. I build
+      <a href="https://github.com/eliheuer/runebender-xilem" class="underline">Runebender Xilem</a>,
+      a cross-platform open-source font editor written in Rust;
+      <a href="https://github.com/eliheuer/img2bez" class="underline">img2bez</a>,
+      a raster-to-bezier tracer for type design; Font.Garden, a solo startup
+      applying generative AI to vector graphics; and type design nodes for
+      <a href="https://github.com/eliheuer/comfyfont" class="underline">ComfyUI</a>.
+    </p>
+    <p class="text-muted-foreground mt-4 flex flex-wrap gap-x-4 gap-y-1">
+      <Link href="https://github.com/eliheuer" class="hover:text-foreground">GitHub</Link>
+      <Link href="https://mastodon.social/@eliheuer" class="hover:text-foreground">Mastodon</Link>
+      <Link href="https://x.com/eliheuer" class="hover:text-foreground">X/Twitter</Link>
+      <Link href="https://www.instagram.com/eli.heuer" class="hover:text-foreground">Instagram</Link>
+      <Link href="https://www.youtube.com/@eliheuer" class="hover:text-foreground">YouTube</Link>
+      <Link href="https://www.linkedin.com/in/eliheuer" class="hover:text-foreground">LinkedIn</Link>
+      <Link href="https://www.tiktok.com/@die_gnu_typographie" class="hover:text-foreground">TikTok</Link>
+      <Link href="mailto:elih@protonmail.com" class="hover:text-foreground">Email</Link>
+      <Link href="/rss.xml" class="hover:text-foreground">RSS</Link>
+    </p>
+  </section>
 
-      <div class="mt-[36px] md:mt-0 md:text-right">
-        <a href="https://github.com/eliheuer">GitHub</a><br />
-        <a href="https://x.com/eliheuer">X/Twitter</a><br />
-        <a href="https://mastodon.social/@eliheuer">Mastodon</a><br />
-        <a href="https://www.instagram.com/eli.heuer">Instagram</a><br />
-        <a href="https://www.youtube.com/@eliheuer">YouTube</a><br />
-        <a href="https://www.linkedin.com/in/eliheuer">LinkedIn</a><br />
-        <a href="https://www.tiktok.com/@die_gnu_typographie">TikTok</a><br />
-        <a href="mailto:elih@protonmail.com">Email</a>
-      </div>
-    </div>
+  <section class="pb-8">
+    <h2 class="mb-4 font-semibold">Posts</h2>
+    <PostList posts={allPosts} />
   </section>
 </Layout>

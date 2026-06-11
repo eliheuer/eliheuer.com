@@ -10,6 +10,7 @@ export function formatDate(date: Date) {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
+    timeZone: 'UTC', // date-only frontmatter parses as UTC midnight
   }).format(date)
 }
 

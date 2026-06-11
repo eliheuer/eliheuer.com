@@ -2,6 +2,8 @@
 
 @custom-variant dark (&:is(.dark *));
 @custom-variant use-virtua-font (&:is(.use-virtua-font *), &.use-virtua-font);
+@custom-variant use-inter-font (&:is(.use-inter-font *), &.use-inter-font);
+@custom-variant use-helvetica-font (&:is(.use-helvetica-font *), &.use-helvetica-font);
 @custom-variant use-geist-font (&:is(.use-geist-font *), &.use-geist-font);
 
 /* ── Design tokens ── */
@@ -13,6 +15,12 @@
   --font-sans-virtua:
     'Virtua Grotesk', -apple-system, BlinkMacSystemFont, ui-sans-serif, system-ui,
     sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-sans-inter:
+    'Inter', -apple-system, BlinkMacSystemFont, ui-sans-serif, system-ui,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-sans-helvetica:
+    'Helvetica Neue', Helvetica, Arial, -apple-system, BlinkMacSystemFont,
+    ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-sans-virtua);
   --font-mono:
     'Hasubi Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
@@ -50,6 +58,14 @@
   font-family: 'Virtua Grotesk';
   src: url('/fonts/VirtuaGroteskVF.woff2') format('woff2-variations');
   font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/InterVariable.woff2') format('woff2-variations');
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
@@ -110,6 +126,14 @@ html.use-virtua-font {
   --font-sans: var(--font-sans-virtua);
 }
 
+html.use-inter-font {
+  --font-sans: var(--font-sans-inter);
+}
+
+html.use-helvetica-font {
+  --font-sans: var(--font-sans-helvetica);
+}
+
 html.use-geist-font {
   --font-sans: var(--font-sans-geist);
 }
@@ -129,9 +153,9 @@ html.use-geist-font {
   html {
     @apply bg-background text-foreground scheme-light;
     font-family: var(--font-sans);
-    font-size: 24px;
-    line-height: 36px;
-    letter-spacing: -0.01em;
+    font-size: 17px;
+    line-height: 1.6;
+    letter-spacing: 0;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
