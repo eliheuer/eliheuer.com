@@ -42,7 +42,7 @@ const { next, prev } = await getAdjacentPosts(currentPostId)
 
   {
     (prev || next) && (
-      <nav class="border-border text-muted-foreground flex justify-between gap-x-6 border-t py-6">
+      <nav class="border-foreground text-muted-foreground flex justify-between gap-x-6 border-t py-6">
         <span>
           {prev && (
             <Link href={`/blog/${prev.id}`} class="hover:text-foreground">

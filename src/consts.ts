@@ -24,10 +24,6 @@ export const NAV_LINKS: SocialLink[] = [
     href: '/fonts',
     label: 'fonts',
   },
-  {
-    href: '/graphics',
-    label: 'graphics',
-  },
 ]
 
 export const SOCIAL_LINKS: SocialLink[] = [
@@ -36,8 +32,28 @@ export const SOCIAL_LINKS: SocialLink[] = [
     label: 'GitHub',
   },
   {
-    href: 'https://twitter.com/eliheuer',
-    label: 'Twitter',
+    href: 'https://mastodon.social/@eliheuer',
+    label: 'Mastodon',
+  },
+  {
+    href: 'https://x.com/eliheuer',
+    label: 'X/Twitter',
+  },
+  {
+    href: 'https://www.instagram.com/eli.heuer',
+    label: 'Instagram',
+  },
+  {
+    href: 'https://www.youtube.com/@eliheuer',
+    label: 'YouTube',
+  },
+  {
+    href: 'https://www.linkedin.com/in/eliheuer',
+    label: 'LinkedIn',
+  },
+  {
+    href: 'https://www.tiktok.com/@die_gnu_typographie',
+    label: 'TikTok',
   },
   {
     href: 'mailto:elih@protonmail.com',

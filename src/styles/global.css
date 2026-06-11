@@ -21,7 +21,7 @@
   --font-sans-helvetica:
     'Helvetica Neue', Helvetica, Arial, -apple-system, BlinkMacSystemFont,
     ui-sans-serif, system-ui, sans-serif;
-  --font-sans: var(--font-sans-virtua);
+  --font-sans: var(--font-sans-active);
   --font-mono:
     'Hasubi Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     'Liberation Mono', 'Courier New', monospace;
@@ -122,20 +122,27 @@
 
 /* ── Font toggle: just switch the CSS variable, inherit does the rest ── */
 
+/* @theme inline bakes values into utilities, so .font-sans compiles to
+   var(--font-sans-active); these plain rules are what the font toggle
+   actually switches at runtime. */
+:root {
+  --font-sans-active: var(--font-sans-virtua);
+}
+
 html.use-virtua-font {
-  --font-sans: var(--font-sans-virtua);
+  --font-sans-active: var(--font-sans-virtua);
 }
 
 html.use-inter-font {
-  --font-sans: var(--font-sans-inter);
+  --font-sans-active: var(--font-sans-inter);
 }
 
 html.use-helvetica-font {
-  --font-sans: var(--font-sans-helvetica);
+  --font-sans-active: var(--font-sans-helvetica);
 }
 
 html.use-geist-font {
-  --font-sans: var(--font-sans-geist);
+  --font-sans-active: var(--font-sans-geist);
 }
 
 /* ── Base: the single source of truth ── */

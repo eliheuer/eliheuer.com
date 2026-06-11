@@ -100,7 +100,7 @@
 
     hr {
       margin: 2.5em 0;
-      border-top: 1px solid var(--border);
+      border-top: 1px solid var(--foreground);
     }
 
     table {
