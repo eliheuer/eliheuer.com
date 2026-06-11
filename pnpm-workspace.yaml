@@ -1,6 +1,7 @@
 allowBuilds:
   esbuild: true
   sharp: true
-# Never install versions published less than 4 days ago
-# (supply-chain mitigation: compromised releases are usually yanked within hours)
-minimumReleaseAge: 5760
+# Never install versions published less than 14 days ago
+# (supply-chain mitigation: compromised releases are usually yanked within
+# hours to days; value is in minutes — 30 days would be 43200)
+minimumReleaseAge: 20160
