@@ -48,12 +48,12 @@ The pipeline is a sequence of stages, each of which makes one kind of decision a
 
 **1. Sub-pixel boundary extraction.** Marching squares over the *grayscale* image at the threshold iso-level, with linear interpolation along grid edges. This is the move that fixes Potrace's first problem: rather than discarding the anti-aliasing, the boundary is recovered *from* it. On a synthetic anti-aliased disk the extracted contour is accurate to under 0.35px. One detail that mattered in practice: crossing chaining is made fully deterministic by sorting edge keys, because a contour's start point must not depend on hash order—sub-pixel shifts flip marginal classifications downstream.
 
-**2. Adaptive smoothing.** The boundary is resampled at 1px arc-length spacing and smoothed with a small Gaussian (σ = 1.2 samples). If the result still doesn't read as clean type geometry—mean absolute turn above 0.10 radians per sample, or corners detected more often than once per 30 samples, which real glyphs never do—σ escalates by 1.8× and tries again, up to four times. Clean renders never escalate; degraded sources get progressively stronger treatment at their own noise scale.
+**2. Adaptive smoothing.** The boundary is resampled at 1px arc-length spacing and smoothed with a small Gaussian ($\sigma = 1.2$ samples). If the result still doesn't read as clean type geometry—mean absolute turn above $0.10$ radians per sample, or corners detected more often than once per 30 samples, which real glyphs never do—$\sigma$ escalates by $1.8\times$ and tries again, up to four times. Clean renders never escalate; degraded sources get progressively stronger treatment at their own noise scale.
 
 **3. Structure detection from curvature.** Every structural point comes from the turn-angle signal of the smoothed boundary:
 
-- A **corner** is *concentrated* turn: at least 12° inside a ±1-sample window that also accounts for at least 55% of the turn in the surrounding ±5-sample window. This is the fix for Potrace's alpha problem—an impulse test rather than a deviation test, so a sharp 20° serif join (impulse) separates cleanly from a tight smooth arc (distributed turn).
-- A **straight run** is a maximal stretch whose chord deviation stays under `max(0.15px, 0.005 × chord)`. The envelope is linear in chord length on purpose: a true line's deviation is flat noise while an arc's grows quadratically with chord, so a linear envelope separates them at every scale.
+- A **corner** is *concentrated* turn: at least $12°$ inside a $\pm 1$-sample window that also accounts for at least $55\%$ of the turn in the surrounding $\pm 5$-sample window. This is the fix for Potrace's alpha problem—an impulse test rather than a deviation test, so a sharp 20° serif join (impulse) separates cleanly from a tight smooth arc (distributed turn).
+- A **straight run** is a maximal stretch whose chord deviation stays under $\max(0.15\,\mathrm{px},\ 0.005\,\ell)$ for chord length $\ell$. The envelope is linear in $\ell$ on purpose: a true line's deviation is flat noise at any length, while an arc of radius $r$ deviates from its chord by the sagitta $\ell^2/8r$—quadratic in $\ell$—so a linear envelope separates lines from arcs at every scale with one pair of constants.
 - **Extrema** come from derivative sign changes with ~1px prominence, localized by fitting a parabola to the coordinate signal—which lands them within a pixel of where the designer put the point.
 - **Inflections** are persistent sign changes of smoothed curvature.
 
@@ -61,11 +61,29 @@ The output of this stage is, by construction, the point set a designer would pla
 
 **4. Constrained fitting.** Each curved section gets a least-squares cubic whose end tangent *directions* are fixed—exactly horizontal or vertical at extrema, the adjacent line's direction at tangent points—so only the two handle lengths are free. Handles come out exactly H/V because nothing else is representable, not because of post-hoc snapping. Fixing directions also makes the fit robust to a split point sitting a couple of pixels off the true extremum. Sections that miss tolerance split once at their dominant curvature-sign change (a designer's inflection point); only if that also fails does kurbo subdivide freely.
 
-**5. Continuity passes.** Corners that rasterization rounded into tiny curves between straight edges are rebuilt as sharp intersections. Smooth joins get G1 alignment, then the G2 "harmonization" rule used by the Glyphs and FontLab editors: intersect the two handle lines at `d`, form `p = sqrt(p0·p1)` from the handle-length ratios on each side, and move the on-curve point to `t = p/(p+1)` along the segment between the inner handles, equalizing curvature across the join.
+**5. Continuity passes.** Corners that rasterization rounded into tiny curves between straight edges are rebuilt as sharp intersections. Smooth joins get G1 alignment, then the G2 "harmonization" rule used by the Glyphs and FontLab editors. For cubics $a_0 a_1 a_2 a_3$ and $b_0 b_1 b_2 b_3$ meeting at $a_3 = b_0$, intersect the handle lines $a_1 a_2$ and $b_1 b_2$ at $d$ and form the ratios
 
-**6. Raster-loss refinement.** This is where the diffvg idea pays off, in a form cheap enough to run in a CLI tool. The prefilter approximation says that near the outline, a pixel's ink coverage is a linear ramp in its signed distance `s` to the path: `coverage ≈ clamp(0.5 + s, 0, 1)` with `s` in pixels, signed toward the ink. So the mean squared coverage error over a 2px band of pixel centers is a smooth, honest score for *any candidate outline*—including candidates with different structure than the current one. And because stages 1–5 already produce a sub-pixel-accurate outline, there's no need for autodiff or gradient descent: the few remaining degrees of freedom per decision can be solved by golden-section search.
+$$
+p_0 = \frac{|a_1 a_2|}{|a_2 d|}, \qquad p_1 = \frac{|d\, b_1|}{|b_1 b_2|}, \qquad p = \sqrt{p_0\, p_1},
+$$
 
-One amusing wrinkle: optimizing a cubic's two handle lengths (α, β) independently stalls on arcs, because the loss forms a narrow diagonal valley along α + β ≈ constant—many cubics trade tension between their handles almost freely. Searching the mean and difference directions first fixes it. This is the kind of thing the differentiable-rasterization papers handle with momentum; with two variables you can just look at the valley and aim along it.
+then move the join point to the fraction $t = p/(p+1)$ of the way along $a_2 \to b_1$. This equalizes curvature across the join.
+
+**6. Raster-loss refinement.** This is where the diffvg idea pays off, in a form cheap enough to run in a CLI tool. The prefilter approximation says that near the outline, a pixel's ink coverage is approximately a linear ramp in its signed distance to the path:
+
+$$
+c(x) \;\approx\; \operatorname{clamp}\!\left(\tfrac{1}{2} + s(x),\; 0,\; 1\right),
+$$
+
+with $s(x)$ in pixels, signed toward the ink. A candidate outline $\Gamma$ is then scored by its mean squared coverage error over the band $B$ of pixel centers within 2px of the original boundary:
+
+$$
+L(\Gamma) \;=\; \frac{1}{|B|} \sum_{x \in B} \bigl(c_\Gamma(x) - c_{\mathrm{src}}(x)\bigr)^2.
+$$
+
+This is a smooth, honest score for *any candidate outline*—including candidates with different structure than the current one, which is exactly what makes it usable as a judge. And because stages 1–5 already produce a sub-pixel-accurate outline, there's no need for autodiff or gradient descent: the few remaining degrees of freedom per decision can be solved by golden-section search.
+
+One amusing wrinkle: optimizing a cubic's two handle lengths $(\alpha, \beta)$ independently stalls on arcs, because the loss forms a narrow diagonal valley along $\alpha + \beta \approx \mathrm{const}$—many cubics trade tension between their handles almost freely. Searching the mean direction $\tfrac{1}{2}(\alpha + \beta)$ and the difference direction $\tfrac{1}{2}(\alpha - \beta)$ before the individual axes fixes it. This is the kind of thing the differentiable-rasterization papers handle with momentum; with two variables you can just look at the valley and aim along it.
 
 The refinement runs three structural judgments, each phrased as *candidates competing on the band loss*:
 
