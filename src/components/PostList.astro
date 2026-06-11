@@ -11,9 +11,9 @@ const { posts } = Astro.props
 const shortDate = (date: Date) =>
   Intl.DateTimeFormat('en-US', {
     day: '2-digit',
-    month: 'short',
+    month: '2-digit',
     year: 'numeric',
-    timeZone: 'UTC', // date-only frontmatter parses as UTC midnight
+    timeZone: 'UTC',
   }).format(date)
 ---
 
