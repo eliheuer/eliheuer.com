@@ -1,4 +1,5 @@
 ---
+import Link from '@/components/Link.astro'
 import PageHead from '@/components/PageHead.astro'
 import Layout from '@/layouts/Layout.astro'
 ---
@@ -6,7 +7,246 @@ import Layout from '@/layouts/Layout.astro'
 <Layout>
   <PageHead slot="head" title="Fonts" />
 
-  <section>
-    <p class="text-foreground">Coming soon.</p>
+  <section class="py-8">
+    <h1 class="mb-2 text-xl font-semibold">Fonts</h1>
+    <p class="text-muted-foreground mb-6">
+      Typefaces I have designed, forked, or prepared for release. Full list on <Link href="https://github.com/eliheuer" class="underline">GitHub</Link>.
+    </p>
+    <ul class="flex flex-col gap-y-2">
+    <li>
+      <Link href="https://github.com/eliheuer/caskaydia-cove" class="hover:underline">caskaydia-cove</Link><span class="text-muted-foreground"> — Caskaydia Cove is a fork of the Cascadia Code typeface with the RFN (Reserved Font Name) removed, plus small adjustments to conform to the Google Fonts spec.</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/hasubi-mono" class="hover:underline">hasubi-mono</Link><span class="text-muted-foreground"> — A horizontal contrast monospace typeface designed by Eli Heuer. This is an alpha quality pre-1.0 typeface, not ready for use and currently under development. 🚧</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/micro-grotesk" class="hover:underline">micro-grotesk</Link><span class="text-muted-foreground"> — ⚠️ Work in progress: A 256 UPM typeface in the smallest possible file size.</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/epistle" class="hover:underline">epistle</Link><span class="text-muted-foreground"> — old-style typeface</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/titillium-web-vf" class="hover:underline">titillium-web-vf</Link><span class="text-muted-foreground"> — Titillium Web variable fonts, a fork of Cairo by Mohamed Gaber:</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/GTL001" class="hover:underline">GTL001</Link><span class="text-muted-foreground"> — GTL001 font</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/blue-ocean" class="hover:underline">blue-ocean</Link><span class="text-muted-foreground"> — A variable font fork of VTF Bluu Next, redrawn in quadratic curves.</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/baby-shark" class="hover:underline">baby-shark</Link><span class="text-muted-foreground"> — UFO font source made with Runebender</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/open-gate-naskh" class="hover:underline">open-gate-naskh</Link><span class="text-muted-foreground"> — ⚠️ Work in progress...</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/blocksync" class="hover:underline">blocksync</Link><span class="text-muted-foreground"> — Blocksync Variable Font</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/tenpo" class="hover:underline">tenpo</Link><span class="text-muted-foreground"> — 🕒 Mono—proportional variable font with rotalics.</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/bezy-grotesk" class="hover:underline">bezy-grotesk</Link><span class="text-muted-foreground"> — Bezy Grotesk</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/rena" class="hover:underline">rena</Link><span class="text-muted-foreground"> — Rena typeface by Eli Heuer</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/blotter-vf" class="hover:underline">blotter-vf</Link><span class="text-muted-foreground"> — A typeface by Froyo Tam - WIP VF fork</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/instruments-serif" class="hover:underline">instruments-serif</Link><span class="text-muted-foreground"> — A multi-weight/width variable font fork of Instrument Serif by Eli Heuer</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/wallingford" class="hover:underline">wallingford</Link><span class="text-muted-foreground"> — Work in progress typeface made with Runebender.</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/gnugrotesk" class="hover:underline">gnugrotesk</Link><span class="text-muted-foreground"> — wip</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/GTL002" class="hover:underline">GTL002</Link><span class="text-muted-foreground"> — GTL002: font 2 from GTL</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/radiocanadafonts" class="hover:underline">radiocanadafonts</Link>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/fg-grotesk" class="hover:underline">fg-grotesk</Link><span class="text-muted-foreground"> — FG Grotesk</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/bluu-next-vf" class="hover:underline">bluu-next-vf</Link><span class="text-muted-foreground"> — Variable font fork of Bluu Next typeface</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/HeuerSchrift" class="hover:underline">HeuerSchrift</Link><span class="text-muted-foreground"> — Blackletter Typeface</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/national-park" class="hover:underline">national-park</Link><span class="text-muted-foreground"> — A fork of the National Park typeface, redrawn as a variable font.</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/news-textura" class="hover:underline">news-textura</Link><span class="text-muted-foreground"> — A fork of the blackletter typeface Chomsky with an optical-size-variable-font axis.</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/blender-block" class="hover:underline">blender-block</Link><span class="text-muted-foreground"> — A berthold-block-like typeface in 3D, made with Blender</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/blobby-block" class="hover:underline">blobby-block</Link><span class="text-muted-foreground"> — A free/libre hobo-like font, redrawn with quadratic curves. 🚧 [ under construction ] 🚧</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/heuer-grotesk" class="hover:underline">heuer-grotesk</Link>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/hyperblobject" class="hover:underline">hyperblobject</Link><span class="text-muted-foreground"> — A display typeface drawn with pure hyperbezier curves in Runebender</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/libre-caslon-condensed-gf" class="hover:underline">libre-caslon-condensed-gf</Link><span class="text-muted-foreground"> — An open-source condensed serif font family derived from Libre Caslon.</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/mebo" class="hover:underline">mebo</Link><span class="text-muted-foreground"> — Display font</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/open-gate-mono" class="hover:underline">open-gate-mono</Link><span class="text-muted-foreground"> — Work in progress. A monospace Arabic/Latin typeface.</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/virtua-grotesk" class="hover:underline">virtua-grotesk</Link><span class="text-muted-foreground"> — Virtua Grotesk source files</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/woodbine" class="hover:underline">woodbine</Link><span class="text-muted-foreground"> — Calligraphic sans-serif variable font</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/heuer-grotesk-old" class="hover:underline">heuer-grotesk-old</Link><span class="text-muted-foreground"> — Heuer Grotesk</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/linux-quadra" class="hover:underline">linux-quadra</Link><span class="text-muted-foreground"> — A variable font fork of Linux Biolinum</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/upm256" class="hover:underline">upm256</Link><span class="text-muted-foreground"> — Typeface designed on a 256 UPM grid</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/wa7ed-mono" class="hover:underline">wa7ed-mono</Link><span class="text-muted-foreground"> — Experimental monospace typeface for readers of both the Perso-Arabic and Latin scripts.</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/1F7D9" class="hover:underline">1F7D9</Link><span class="text-muted-foreground"> — U+1F7D9</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/Exile-GF" class="hover:underline">Exile-GF</Link><span class="text-muted-foreground"> — A fork of Exile that conforms to the Google Fonts spec</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/fdfd" class="hover:underline">fdfd</Link><span class="text-muted-foreground"> — Unicode Codepoint ﷽ (U+FDFD)</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/isotherma" class="hover:underline">isotherma</Link><span class="text-muted-foreground"> — Blackletter typeface with roots in the B42-type used by Johann Gutenberg</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/Kalimat-mono" class="hover:underline">Kalimat-mono</Link><span class="text-muted-foreground"> — Kalimát Typeface كلمات</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/lllllllll-vf" class="hover:underline">lllllllll-vf</Link><span class="text-muted-foreground"> — working font</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/MFEK-icon-fonts" class="hover:underline">MFEK-icon-fonts</Link><span class="text-muted-foreground"> — Icon Fonts for MFEK drawn by Eli Heuer</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/open-source-font-with-these-characteristics" class="hover:underline">open-source-font-with-these-characteristics</Link>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/preschool" class="hover:underline">preschool</Link><span class="text-muted-foreground"> — A Cooper-Black-like OFL free/libre font designed using Bezy</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/pyxel-font" class="hover:underline">pyxel-font</Link><span class="text-muted-foreground"> — pyxel-font</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/ren" class="hover:underline">ren</Link><span class="text-muted-foreground"> — variable font</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/trailhead" class="hover:underline">trailhead</Link><span class="text-muted-foreground"> — A variable font fork of the National Park Typeface</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/ab" class="hover:underline">ab</Link><span class="text-muted-foreground"> — اب Arabic/Persian display typeface</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/averia-libre-vf" class="hover:underline">averia-libre-vf</Link><span class="text-muted-foreground"> — Avería Libre typeface family as a variable font</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/bedbug" class="hover:underline">bedbug</Link><span class="text-muted-foreground"> — A friendly fork of Chomsky, redrawn in Glyphs with cubic curves, with a optical size axis.</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/behrens-antiqua" class="hover:underline">behrens-antiqua</Link><span class="text-muted-foreground"> — Typeface Revival, originally released as Behrens Antiqua by Klingspor in 1907. </span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/browne" class="hover:underline">browne</Link><span class="text-muted-foreground"> — A line segment only fork of Noto Nastaliq</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/concertone-gf" class="hover:underline">concertone-gf</Link><span class="text-muted-foreground"> — A fork of Concert One fonts that conforms to the Google Fonts spec</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/eenheidvar" class="hover:underline">eenheidvar</Link><span class="text-muted-foreground"> — H-&gt;A</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/Estedad-GF" class="hover:underline">Estedad-GF</Link><span class="text-muted-foreground"> — A fork of Estedad that conforms to the Google Fonts spec</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/exosolar" class="hover:underline">exosolar</Link><span class="text-muted-foreground"> — exosolar font sources</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/gotu-gf" class="hover:underline">gotu-gf</Link><span class="text-muted-foreground"> — Google Fonts Project Template Compatible fork of Gotu</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/hind-siliguri-gf" class="hover:underline">hind-siliguri-gf</Link><span class="text-muted-foreground"> — A fork of hind-siliguri that conforms to the Google Fonts spec</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/ilo" class="hover:underline">ilo</Link><span class="text-muted-foreground"> — 🚧TEST FONT🚧 ilo is a toki pona word: 具 (jp), 匕 (zh), noun, tool, device, machine, thing used for a specific purpose.</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/khand-gf" class="hover:underline">khand-gf</Link><span class="text-muted-foreground"> — A fork of Khand fonts that conform to the Google Fonts spec</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/linja-pona-ufo" class="hover:underline">linja-pona-ufo</Link><span class="text-muted-foreground"> — 🔆 Fork of linja-pona—a font for sitelen pona—a script for toki pona.</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/loje" class="hover:underline">loje</Link><span class="text-muted-foreground"> — Typeface</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/maname-font-gf" class="hover:underline">maname-font-gf</Link><span class="text-muted-foreground"> — A fork of maname-font that conforms to the Google Fonts spec</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/Mikhak-GF" class="hover:underline">Mikhak-GF</Link><span class="text-muted-foreground"> — A fork of Mikhak that conforms to the Google Fonts spec</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/moves" class="hover:underline">moves</Link><span class="text-muted-foreground"> — Moves typeface -- from http://moves.nu/</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/New-Terminal" class="hover:underline">New-Terminal</Link><span class="text-muted-foreground"> — A condensed monospace font for terminal emulators.</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/nur-mono" class="hover:underline">nur-mono</Link><span class="text-muted-foreground"> — A monospace Arabic font (WIP)</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/optimal" class="hover:underline">optimal</Link><span class="text-muted-foreground"> — Variable Font</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/pali" class="hover:underline">pali</Link><span class="text-muted-foreground"> — a latin alphabet font</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/quadround" class="hover:underline">quadround</Link><span class="text-muted-foreground"> — Quadround: a fork of Staatliches</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/rompacta" class="hover:underline">rompacta</Link><span class="text-muted-foreground"> — Condensed sans-serif typeface designed in Runebender live on Twitch</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/rreepplliiccaa" class="hover:underline">rreepplliiccaa</Link><span class="text-muted-foreground"> — Variable Font</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/SKI" class="hover:underline">SKI</Link><span class="text-muted-foreground"> — Square Kufic Interactive: a quadratic variable font</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/tru-sans" class="hover:underline">tru-sans</Link><span class="text-muted-foreground"> — .tfont demo font</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/U-FDFD" class="hover:underline">U-FDFD</Link><span class="text-muted-foreground"> — U+FDFD</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/ya-baha-u-l-abha" class="hover:underline">ya-baha-u-l-abha</Link><span class="text-muted-foreground"> — A font with UFO sources containing multiple renderings of the phrase: Yá Baháʼu'l-Abhá يا بهاء الأبهى</span>
+    </li>
+    </ul>
   </section>
 </Layout>

@@ -1,4 +1,5 @@
 ---
+import Link from '@/components/Link.astro'
 import PageHead from '@/components/PageHead.astro'
 import Layout from '@/layouts/Layout.astro'
 ---
@@ -6,7 +7,168 @@ import Layout from '@/layouts/Layout.astro'
 <Layout>
   <PageHead slot="head" title="Software" />
 
-  <section>
-    <p class="text-foreground">Coming soon.</p>
+  <section class="py-8">
+    <h1 class="mb-2 text-xl font-semibold">Software</h1>
+    <p class="text-muted-foreground mb-6">
+      Software I have built or worked on, mostly font tooling in Rust and Python. Full list on <Link href="https://github.com/eliheuer" class="underline">GitHub</Link>.
+    </p>
+    <ul class="flex flex-col gap-y-2">
+    <li>
+      <Link href="https://github.com/eliheuer/img2bez" class="hover:underline">img2bez</Link><span class="text-muted-foreground"> — Trace raster images to font-ready bezier outlines — Rust library and CLI tool.</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/bezy" class="hover:underline">bezy</Link><span class="text-muted-foreground"> — A font editor built with Bevy</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/runebender-xilem" class="hover:underline">runebender-xilem</Link><span class="text-muted-foreground"> — A port of Runebender from Druid to Xilem</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/cairo-drawbot" class="hover:underline">cairo-drawbot</Link><span class="text-muted-foreground"> — 🎨 A GNU+Linux compatible fork of DrawBot.</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/spoonbender" class="hover:underline">spoonbender</Link><span class="text-muted-foreground"> — Cross-platform UFO font editor, a fork of Runebender</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/qalam" class="hover:underline">qalam</Link><span class="text-muted-foreground"> — A simple UFO font editor in Rust+GTK. (work in progress)</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/bez" class="hover:underline">bez</Link><span class="text-muted-foreground"> — A toy font editor built with GPUI from the Zed project.</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/tk-calligraphy" class="hover:underline">tk-calligraphy</Link><span class="text-muted-foreground"> — 🖌 Calligraphy paint program made with Python3 &amp; Tkinter</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/fully-automated-font-repository" class="hover:underline">fully-automated-font-repository</Link><span class="text-muted-foreground"> — Fully Automated Font Repository</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/comfyfont" class="hover:underline">comfyfont</Link>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/libretype-data-tools" class="hover:underline">libretype-data-tools</Link><span class="text-muted-foreground"> — A collection of scripts for working with the whole libre/open-source typeface ecosystem.</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/designbot" class="hover:underline">designbot</Link><span class="text-muted-foreground"> — Like DrawBot but in Rust. Create graphics with code.</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/hermes-comfyui-theme-maker" class="hover:underline">hermes-comfyui-theme-maker</Link><span class="text-muted-foreground"> — Hermes Agent skill + tools for generating ComfyUI frontend themes from natural language, fully local on Apple Silicon</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/runebender-comfy" class="hover:underline">runebender-comfy</Link><span class="text-muted-foreground"> — ComfyUI custom nodes: Runebender glyph editor (Vello+Kurbo WASM, Vue) and DrawBot Skia scripting node.</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/bevy-snake" class="hover:underline">bevy-snake</Link><span class="text-muted-foreground"> — A simple snake game in Rust/Bevy</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/bunny-pyx" class="hover:underline">bunny-pyx</Link><span class="text-muted-foreground"> — A Kid-Pix inspired paint program made with Pyxel, designed to teach children Python programming.</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/py-bahai-date" class="hover:underline">py-bahai-date</Link><span class="text-muted-foreground"> — A Python module for conversion between the Gregorian calendar and the Baha'i (or Badi) calendar.</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/build-vf" class="hover:underline">build-vf</Link><span class="text-muted-foreground"> — 📃A shell script for automating the process of preparing variable fonts for release.</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/ComfyUI_Lite_frontend" class="hover:underline">ComfyUI_Lite_frontend</Link><span class="text-muted-foreground"> — Eli's opinionated fork of the ComfyUI frontend</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/glif2nft" class="hover:underline">glif2nft</Link><span class="text-muted-foreground"> — A Rust CLI program for making NFTs from UFO font sources.</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/lilufo-old-python-version" class="hover:underline">lilufo-old-python-version</Link><span class="text-muted-foreground"> — 🛸 A simple UFO font editor.</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/maze-man-rpg" class="hover:underline">maze-man-rpg</Link><span class="text-muted-foreground"> — A Pyxel game by Eli &amp; son, a fork of MazeWalkGame</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/simplefont" class="hover:underline">simplefont</Link><span class="text-muted-foreground"> — A simplified fork of TruFont.</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/ufo-pytorch-scripts" class="hover:underline">ufo-pytorch-scripts</Link><span class="text-muted-foreground"> — PyTorch scripts for working with UFO font source files </span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/ufo2nft" class="hover:underline">ufo2nft</Link><span class="text-muted-foreground"> — A tool to automate creating on-chain SVG NFTs from UFO font sources</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/xilem-qalam" class="hover:underline">xilem-qalam</Link><span class="text-muted-foreground"> — Experimental font editor built with Rust/Xilem</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/bufo" class="hover:underline">bufo</Link><span class="text-muted-foreground"> — A tool for CLI-centric UFO workflows</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/cookiecutter-variable-font" class="hover:underline">cookiecutter-variable-font</Link><span class="text-muted-foreground"> — A variable font template for Python3 cookiecutter.</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/druid-paint" class="hover:underline">druid-paint</Link><span class="text-muted-foreground"> — Work in progress, a simple paint program made with Rust+Druid</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/efont" class="hover:underline">efont</Link><span class="text-muted-foreground"> — Eli Heuer's Font Editor, a fork of Runebender.</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/elih-fonttools-scripts" class="hover:underline">elih-fonttools-scripts</Link><span class="text-muted-foreground"> — Eli's Fonttools scripts</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/elih-glyphs-scripts" class="hover:underline">elih-glyphs-scripts</Link><span class="text-muted-foreground"> — 📃 Eli's Simple Glyphs Scripts</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/FarmigoDataTools" class="hover:underline">FarmigoDataTools</Link><span class="text-muted-foreground"> — Automate working with CSVs exported from Farmigo with these unix-style command line tools written in Python.</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/FlappyBird128" class="hover:underline">FlappyBird128</Link><span class="text-muted-foreground"> — A simple Flappy Bird clone in Java at 128 x 128 pixels</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/font-utilities" class="hover:underline">font-utilities</Link><span class="text-muted-foreground"> — Tools and utilities for working with fonts. </span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/gif-generator" class="hover:underline">gif-generator</Link><span class="text-muted-foreground"> — A simple Rust program used to generate animated GIFs from the command line.</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/hidden-words" class="hover:underline">hidden-words</Link><span class="text-muted-foreground"> — command line application</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/img2glyph" class="hover:underline">img2glyph</Link>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/img2ufo" class="hover:underline">img2ufo</Link><span class="text-muted-foreground"> — image to UFO converter</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/JFont" class="hover:underline">JFont</Link><span class="text-muted-foreground"> — A simple Java font editor.</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/lilufo" class="hover:underline">lilufo</Link><span class="text-muted-foreground"> — WIP</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/ltc" class="hover:underline">ltc</Link><span class="text-muted-foreground"> — LTC: Font Package Manager</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/orbs" class="hover:underline">orbs</Link><span class="text-muted-foreground"> — Pyxel Cart</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/runebender-core" class="hover:underline">runebender-core</Link><span class="text-muted-foreground"> — Platform-independent core types for the Runebender font editor (shared between runebender-xilem and runebender-comfy).</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/simple-snake-rs" class="hover:underline">simple-snake-rs</Link><span class="text-muted-foreground"> — A simple snake game in Rust</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/space-game-256" class="hover:underline">space-game-256</Link><span class="text-muted-foreground"> — A simple game made Ruby and Gosu.</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/spoonbender2" class="hover:underline">spoonbender2</Link><span class="text-muted-foreground"> — An attempt at porting Runebender to Xilem from Druid</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/tarskis-world" class="hover:underline">tarskis-world</Link><span class="text-muted-foreground"> — Tarski's World game in Python+pyQt5</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/trufont-drawingtools" class="hover:underline">trufont-drawingtools</Link><span class="text-muted-foreground"> — A collection of custom drawing tools for TruFont</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/ufoGamepad" class="hover:underline">ufoGamepad</Link><span class="text-muted-foreground"> — Edit UFO (Unified Font Object) kerning with a USB gamepad using PyGame. </span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/vf-upgrade-survival-kit" class="hover:underline">vf-upgrade-survival-kit</Link><span class="text-muted-foreground"> — Glyphs scripts used for upgrading static fonts to variable fonts.</span>
+    </li>
+    <li>
+      <Link href="https://github.com/eliheuer/xilem-sketchbook" class="hover:underline">xilem-sketchbook</Link><span class="text-muted-foreground"> — small example programs to learn Xilem</span>
+    </li>
+    </ul>
   </section>
 </Layout>
