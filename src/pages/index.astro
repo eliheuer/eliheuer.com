@@ -11,7 +11,7 @@ const allPosts = await getAllPosts()
 <Layout>
   <PageHead slot="head" title="Eli Heuer" />
 
-  <section class="py-8">
+  <section class="py-5">
     <p>
       I'm an AI and design engineer based in the US. I build
       <a href="https://github.com/eliheuer/runebender-xilem" class="underline">Runebender Xilem</a>,
@@ -23,10 +23,10 @@ const allPosts = await getAllPosts()
     </p>
   </section>
 
-  <hr class="border-foreground mb-8" />
+  <hr class="border-foreground" />
 
-  <section class="pb-8">
-    <h2 class="mb-4 font-normal">Posts</h2>
+  <section class="py-5">
+    <h2 class="mb-5 font-normal">Posts</h2>
     <PostList posts={allPosts} />
   </section>
 </Layout>
