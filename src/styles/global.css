@@ -160,7 +160,7 @@ html.use-geist-font {
   html {
     @apply bg-background text-foreground scheme-light;
     font-family: var(--font-sans);
-    font-size: 17px;
+    font-size: 18px;
     line-height: 1.6;
     letter-spacing: 0;
     text-rendering: optimizeLegibility;
