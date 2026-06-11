@@ -14,15 +14,15 @@ export const SITE: Site = {
 export const NAV_LINKS: SocialLink[] = [
   {
     href: '/blog',
-    label: 'blog',
+    label: 'Blog',
   },
   {
     href: '/software',
-    label: 'software',
+    label: 'Software',
   },
   {
     href: '/fonts',
-    label: 'fonts',
+    label: 'Fonts',
   },
 ]
 
