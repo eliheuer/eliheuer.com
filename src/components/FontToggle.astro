@@ -2,17 +2,17 @@
 import { Button } from '@/components/ui/button'
 import { Icon } from 'astro-icon/components'
 
-const defaultFont = 'bezy'
+const defaultFont = 'virtua'
 ---
 
 <Button id="font-toggle" variant="outline" size="icon" title="Toggle font">
   <Icon
     name="lucide:file-type-2"
-    class="size-4 scale-100 rotate-0 transition-all use-bezy-font:scale-0 use-bezy-font:-rotate-90"
+    class="size-4 scale-100 rotate-0 transition-all use-virtua-font:scale-0 use-virtua-font:-rotate-90"
   />
   <Icon
     name="lucide:file-type"
-    class="absolute size-4 scale-0 rotate-90 transition-all use-bezy-font:scale-100 use-bezy-font:rotate-0"
+    class="absolute size-4 scale-0 rotate-90 transition-all use-virtua-font:scale-100 use-virtua-font:rotate-0"
   />
   <span class="sr-only">Toggle font</span>
 </Button>
@@ -23,10 +23,10 @@ const defaultFont = 'bezy'
     if (!btn) return;
     btn.addEventListener('click', () => {
       const html = document.documentElement;
-      const isBezy = html.classList.contains('use-bezy-font');
-      html.classList.remove('use-bezy-font', 'use-geist-font');
-      html.classList.add(isBezy ? 'use-geist-font' : 'use-bezy-font');
-      localStorage.setItem('font', isBezy ? 'geist' : 'bezy');
+      const isVirtua = html.classList.contains('use-virtua-font');
+      html.classList.remove('use-virtua-font', 'use-geist-font');
+      html.classList.add(isVirtua ? 'use-geist-font' : 'use-virtua-font');
+      localStorage.setItem('font', isVirtua ? 'geist' : 'virtua');
     });
   }
 

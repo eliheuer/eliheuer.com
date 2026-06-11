@@ -9,8 +9,8 @@ import { Button } from '@/components/ui/button'
     font-family: 'Geist', sans-serif !important;
   }
   
-  .bezy-test {
-    font-family: 'Bezy Grotesk', sans-serif !important;
+  .virtua-test {
+    font-family: 'Virtua Grotesk', sans-serif !important;
   }
 </style>
 
@@ -21,11 +21,11 @@ import { Button } from '@/components/ui/button'
     <h1 class="text-4xl font-bold">Font Test Page</h1>
     
     <div class="space-y-4">
-      <p class="text-2xl">This text should change fonts when switching between Geist and Bezy Grotesk.</p>
+      <p class="text-2xl">This text should change fonts when switching between Geist and Virtua Grotesk.</p>
       
       <div class="flex items-center gap-4">
         <Button id="use-geist-btn">Use Geist Font</Button>
-        <Button id="use-bezy-btn">Use Bezy Grotesk Font</Button>
+        <Button id="use-virtua-btn">Use Virtua Grotesk Font</Button>
       </div>
       
       <div class="p-4 border rounded-md">
@@ -58,9 +58,9 @@ import { Button } from '@/components/ui/button'
         </div>
         
         <div class="p-4 border rounded-md">
-          <h3 class="text-xl font-medium mb-2">Bezy Grotesk Font Direct Test</h3>
-          <p class="bezy-test">The quick brown fox jumps over the lazy dog.</p>
-          <p class="bezy-test font-bold">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+          <h3 class="text-xl font-medium mb-2">Virtua Grotesk Font Direct Test</h3>
+          <p class="virtua-test">The quick brown fox jumps over the lazy dog.</p>
+          <p class="virtua-test font-bold">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
         </div>
       </div>
     </div>
@@ -89,24 +89,24 @@ import { Button } from '@/components/ui/button'
     // Initialize the buttons
     document.addEventListener('DOMContentLoaded', () => {
       const geistBtn = document.getElementById('use-geist-btn');
-      const bezyBtn = document.getElementById('use-bezy-btn');
+      const virtuaBtn = document.getElementById('use-virtua-btn');
       
       if (geistBtn) {
         geistBtn.addEventListener('click', () => {
           const html = document.documentElement;
-          html.classList.remove('use-bezy-font');
+          html.classList.remove('use-virtua-font');
           html.classList.add('use-geist-font');
           localStorage.setItem('font', 'geist');
           updateFontInfo();
         });
       }
       
-      if (bezyBtn) {
-        bezyBtn.addEventListener('click', () => {
+      if (virtuaBtn) {
+        virtuaBtn.addEventListener('click', () => {
           const html = document.documentElement;
           html.classList.remove('use-geist-font');
-          html.classList.add('use-bezy-font');
-          localStorage.setItem('font', 'bezy');
+          html.classList.add('use-virtua-font');
+          localStorage.setItem('font', 'virtua');
           updateFontInfo();
         });
       }

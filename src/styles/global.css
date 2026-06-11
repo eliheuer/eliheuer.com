@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 @custom-variant dark (&:is(.dark *));
-@custom-variant use-bezy-font (&:is(.use-bezy-font *), &.use-bezy-font);
+@custom-variant use-virtua-font (&:is(.use-virtua-font *), &.use-virtua-font);
 @custom-variant use-geist-font (&:is(.use-geist-font *), &.use-geist-font);
 
 /* ── Design tokens ── */
@@ -10,10 +10,10 @@
   --font-sans-geist:
     'Geist', -apple-system, BlinkMacSystemFont, ui-sans-serif, system-ui,
     sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --font-sans-bezy:
-    'Bezy Grotesk', -apple-system, BlinkMacSystemFont, ui-sans-serif, system-ui,
+  --font-sans-virtua:
+    'Virtua Grotesk', -apple-system, BlinkMacSystemFont, ui-sans-serif, system-ui,
     sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --font-sans: var(--font-sans-bezy);
+  --font-sans: var(--font-sans-virtua);
   --font-mono:
     'Hasubi Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     'Liberation Mono', 'Courier New', monospace;
@@ -47,9 +47,9 @@
 }
 
 @font-face {
-  font-family: 'Bezy Grotesk';
-  src: url('/fonts/BezyGrotesk-Regular.woff2') format('woff2');
-  font-weight: 400;
+  font-family: 'Virtua Grotesk';
+  src: url('/fonts/VirtuaGroteskVF.woff2') format('woff2-variations');
+  font-weight: 400 700;
   font-style: normal;
   font-display: swap;
 }
@@ -106,8 +106,8 @@
 
 /* ── Font toggle: just switch the CSS variable, inherit does the rest ── */
 
-html.use-bezy-font {
-  --font-sans: var(--font-sans-bezy);
+html.use-virtua-font {
+  --font-sans: var(--font-sans-virtua);
 }
 
 html.use-geist-font {

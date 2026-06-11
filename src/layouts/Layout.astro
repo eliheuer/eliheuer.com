@@ -8,11 +8,11 @@ import Header from '@/components/Header.astro'
 import { SITE } from '@/consts'
 import { cn } from '@/lib/utils'
 
-const defaultFont = 'bezy'
+const defaultFont = 'virtua'
 ---
 
 <!doctype html>
-<html lang={SITE.locale} class={defaultFont === 'bezy' ? 'use-bezy-font' : 'use-geist-font'}>
+<html lang={SITE.locale} class={defaultFont === 'virtua' ? 'use-virtua-font' : 'use-geist-font'}>
   <Head>
     <slot name="head" />
   </Head>
@@ -28,18 +28,18 @@ const defaultFont = 'bezy'
       <Footer />
     </div>
 
-    <script is:inline define:vars={{ defaultFont: 'bezy' }}>
+    <script is:inline define:vars={{ defaultFont: 'virtua' }}>
       (function() {
         try {
           const font = localStorage.getItem('font') || defaultFont;
           const html = document.documentElement;
-          html.classList.remove('use-bezy-font', 'use-geist-font');
-          html.classList.add(font === 'bezy' ? 'use-bezy-font' : 'use-geist-font');
+          html.classList.remove('use-virtua-font', 'use-geist-font');
+          html.classList.add(font === 'geist' ? 'use-geist-font' : 'use-virtua-font');
           if (!localStorage.getItem('font')) {
             localStorage.setItem('font', defaultFont);
           }
         } catch (e) {
-          document.documentElement.classList.add('use-bezy-font');
+          document.documentElement.classList.add('use-virtua-font');
         }
       })();
     </script>
