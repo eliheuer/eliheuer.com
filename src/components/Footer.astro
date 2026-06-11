@@ -6,20 +6,20 @@ import ThemeToggle from './ThemeToggle.astro'
 ---
 
 <footer class="border-foreground text-muted-foreground mt-16 flex flex-col gap-y-2 border-t py-6 text-sm">
-  <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-    <div class="flex flex-wrap gap-x-4">
-      {
-        SOCIAL_LINKS.map((link) => (
-          <Link href={link.href} class="hover:text-foreground transition-colors">
-            {link.label}
-          </Link>
-        ))
-      }
-    </div>
+  <div class="flex w-full flex-wrap gap-x-4 gap-y-1">
+    {
+      SOCIAL_LINKS.map((link) => (
+        <Link href={link.href} class="hover:text-foreground transition-colors">
+          {link.label}
+        </Link>
+      ))
+    }
+  </div>
+  <div class="flex items-baseline justify-between">
+    <p>&copy; {new Date().getFullYear()} Eli Heuer &middot; CC BY-SA 4.0</p>
     <div class="flex items-baseline gap-x-4">
       <FontToggle transition:persist />
       <ThemeToggle transition:persist />
     </div>
   </div>
-  <p>&copy; {new Date().getFullYear()} Eli Heuer &middot; CC BY-SA 4.0</p>
 </footer>
