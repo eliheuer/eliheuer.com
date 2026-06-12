@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v4              # ⬅ latest checkout
       - uses: withastro/action@v4              # ⬅ latest Astro action (uses artifact v4)
         with:
-          node-version: 20                    # or 22 LTS; both work
+          node-version: 22                    # pnpm 11.6+ requires Node >= 22.13
           package-manager: pnpm               # lockfile auto-detected, but explicit is fine
 
   deploy:
