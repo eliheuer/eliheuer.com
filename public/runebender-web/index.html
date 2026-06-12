@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Runebender</title>
+    <style>
+      html, body, #app { height: 100%; margin: 0; padding: 0; }
+      body {
+        background: #101010;
+        color: #909090;
+        font: 13px ui-sans-serif, system-ui, sans-serif;
+      }
+
+      /* Hairline scrollbars — no track, thin mid-gray thumb that
+         blends into the dark panel background. Same pattern as
+         ~/Notes/dashboard, tuned for the xilem grayscale palette. */
+      @supports (-moz-appearance: none) {
+        * {
+          scrollbar-width: thin;
+          scrollbar-color: #505050 transparent;
+        }
+      }
+      ::-webkit-scrollbar { width: 6px; height: 6px; background: transparent; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb {
+        background: #505050;
+        border-radius: 999px;
+        border: 1.5px solid transparent;
+        background-clip: padding-box;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #707070;
+        border: 1.5px solid transparent;
+        background-clip: padding-box;
+      }
+      ::-webkit-scrollbar-corner { background: transparent; }
+    </style>
+    <script type="module" crossorigin src="/runebender-web/assets/index-DKT02Bab.js"></script>
+    <link rel="stylesheet" crossorigin href="/runebender-web/assets/index-DC1UIvRw.css">
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+</html>
